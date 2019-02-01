@@ -1,7 +1,10 @@
-  .container{
-    display: grid;
-    background-color: aqua;
-    grid-template-rows: 150px auto 150px;
-    grid-template-columns: 25% 75%;
+.container {
+    background-color: lightgreen;
 }
-.evento{ grid-area: content; }
+
+.littleBox {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: lightskyblue;
+    height: 150px;
+}
