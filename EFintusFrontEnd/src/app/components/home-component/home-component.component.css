@@ -1,0 +1,7 @@
+  .container{
+    display: grid;
+    background-color: aqua;
+    grid-template-rows: 150px auto 150px;
+    grid-template-columns: 25% 75%;
+}
+.evento{ grid-area: content; }
