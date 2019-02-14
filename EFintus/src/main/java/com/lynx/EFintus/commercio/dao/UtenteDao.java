@@ -62,7 +62,7 @@ public class UtenteDao extends GenericDao<Utente> {
     }
 
     @Override
-    public void update(Utente utente, String[] params) {
+    public void update(Utente utente) {
 
     }
 

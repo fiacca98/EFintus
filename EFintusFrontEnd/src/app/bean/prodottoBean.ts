@@ -9,6 +9,6 @@ export class ProdottoBean {
       peso: number;
       colore: string;
       pathImmagini: string;
-      dataInizioValidità: string;
-      dataFineValidità: string;
+      dataInizioValidita: string;
+      dataFineValidita: string;
 }
