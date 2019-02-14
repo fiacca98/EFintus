@@ -1,21 +1,20 @@
 package com.lynx.EFintus.commercio.dao;
 
-import com.lynx.EFintus.commercio.classes.Utente;
-import com.lynx.EFintus.commercio.interfaces.Dao;
-
 import java.util.List;
-import java.util.Optional;
 
-public class UtenteDao implements Dao<Utente> {
+import com.lynx.EFintus.commercio.classes.Utente;
+
+public class UtenteDao extends GenericDao<Utente> {
 
     @Override
-    public Optional<Utente> get(long id) {
-        return Optional.empty();
+    public Utente get(long id) {
+
+	return null;
     }
 
     @Override
     public List<Utente> getAll() {
-        return null;
+	return null;
     }
 
     @Override
@@ -32,4 +31,5 @@ public class UtenteDao implements Dao<Utente> {
     public void delete(Utente utente) {
 
     }
+
 }
