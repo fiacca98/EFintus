@@ -13,8 +13,7 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 
     private String TABLE_NAME = "produttore";
 
-    @Override
-    public Produttore get(int id) throws SQLException {
+    public Produttore getByID(int id) throws SQLException {
 	return null;
     }
 
@@ -58,11 +57,19 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 
     @Override
     public void update(Produttore produttore) throws SQLException {
-	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("update" + getTableName() + "set " + "nome=" + produttore.get_nome()
-		+ "indirizzo=" + produttore.get_indirizzo() + "citta=" + produttore.get_citta() + "cap="
-		+ produttore.get_cap() + "telefono=" + produttore.get_telefono() + "email=" + produttore.get_email()
-		+ "descrizione=" + produttore.get_descrizione() + "partitaIVA=" + produttore.get_partitaIVA());
+        Connection con = getConnection();
+        PreparedStatement ps = con
+                .prepareStatement("update" + getTableName() + "set " +
+                        "nome="+produttore.get_nome()+
+                        "indirizzo="+produttore.get_indirizzo()+
+                        "citta="+produttore.get_citta()+
+                        "cap="+produttore.get_cap()+
+                        "telefono="+produttore.get_telefono()+
+                        "email="+produttore.get_email()+
+                        "descrizione="+produttore.get_descrizione()+
+                        "partitaIVA="+produttore.get_partitaIVA()+
+                        "WHERE id="+produttore.get_ID()
+                );
 
 	int status = ps.executeUpdate();
 
