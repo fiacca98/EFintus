@@ -4,139 +4,127 @@ import java.util.Date;
 
 public class Prodotto {
 
-    private int _ID;
-    private String _Nome;
-    private int _ID_Produttore;
-    private float _Prezzo;
-    private int _ID_Categorie;
-    private String _Descrizione;
-    private String _Misure;
-    private float _Peso;
-    private String _Colore;
-    private String _Path_Immagini;
-    private Date _DataInizioValidita;
-    private Date _DateFineValidita;
+    private int id;
+    private String nome;
+    private int idProduttore;
+    private float prezzo;
+    private int idCategorie;
+    private String descrizione;
+    private String misure;
+    private float peso;
+    private String colore;
+    private String pathImmagini;
+    private Date dataInizioValidita;
+    private Date dateFineValidita;
 
-    public Prodotto(int ID,
-                    String Nome,
-                    int ID_Produttore,
-                    float Prezzo,
-                    int ID_Categorie,
-                    String Descrizione,
-                    String Misure,
-                    float Peso,
-                    String Colore,
-                    String Path_Immagini,
-                    Date DataInizioValidita,
-                    Date DateFineValidita) {
-
-        this._ID = ID;
-        this._Nome = Nome;
-        this._ID_Produttore = ID_Produttore;
-        this._Prezzo = Prezzo;
-        this._ID_Categorie = ID_Categorie;
-        this._Descrizione = Descrizione;
-        this._Misure = Misure;
-        this._Peso = Peso;
-        this._Colore = Colore;
-        this._Path_Immagini = Path_Immagini;
-        this._DataInizioValidita = DataInizioValidita;
-        this._DateFineValidita = DateFineValidita;
+    public Prodotto(int id, String nome, int idProduttore, float prezzo, int idCategorie, String descrizione, String misure, float peso, String colore, String pathImmagini, Date dataInizioValidita, Date dateFineValidita) {
+        this.id = id;
+        this.nome = nome;
+        this.idProduttore = idProduttore;
+        this.prezzo = prezzo;
+        this.idCategorie = idCategorie;
+        this.descrizione = descrizione;
+        this.misure = misure;
+        this.peso = peso;
+        this.colore = colore;
+        this.pathImmagini = pathImmagini;
+        this.dataInizioValidita = dataInizioValidita;
+        this.dateFineValidita = dateFineValidita;
     }
 
-    public int get_ID() {
-        return _ID;
+    public int getId() {
+        return id;
     }
 
-    public void set_ID(int _ID) {
-        this._ID = _ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String get_Nome() {
-        return _Nome;
+    public String getNome() {
+        return nome;
     }
 
-    public void set_Nome(String _Nome) {
-        this._Nome = _Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int get_ID_Produttore() {
-        return _ID_Produttore;
+    public int getIdProduttore() {
+        return idProduttore;
     }
 
-    public void set_ID_Produttore(int _ID_Produttore) {
-        this._ID_Produttore = _ID_Produttore;
+    public void setIdProduttore(int idProduttore) {
+        this.idProduttore = idProduttore;
     }
 
-    public float get_Prezzo() {
-        return _Prezzo;
+    public float getPrezzo() {
+        return prezzo;
     }
 
-    public void set_Prezzo(float _Prezzo) {
-        this._Prezzo = _Prezzo;
+    public void setPrezzo(float prezzo) {
+        this.prezzo = prezzo;
     }
 
-    public int get_ID_Categorie() {
-        return _ID_Categorie;
+    public int getIdCategorie() {
+        return idCategorie;
     }
 
-    public void set_ID_Categorie(int _ID_Categorie) {
-        this._ID_Categorie = _ID_Categorie;
+    public void setIdCategorie(int idCategorie) {
+        this.idCategorie = idCategorie;
     }
 
-    public String get_Descrizione() {
-        return _Descrizione;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void set_Descrizione(String _Descrizione) {
-        this._Descrizione = _Descrizione;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
-    public String get_Misure() {
-        return _Misure;
+    public String getMisure() {
+        return misure;
     }
 
-    public void set_Misure(String _Misure) {
-        this._Misure = _Misure;
+    public void setMisure(String misure) {
+        this.misure = misure;
     }
 
-    public float get_Peso() {
-        return _Peso;
+    public float getPeso() {
+        return peso;
     }
 
-    public void set_Peso(float _Peso) {
-        this._Peso = _Peso;
+    public void setPeso(float peso) {
+        this.peso = peso;
     }
 
-    public String get_Colore() {
-        return _Colore;
+    public String getColore() {
+        return colore;
     }
 
-    public void set_Colore(String _Colore) {
-        this._Colore = _Colore;
+    public void setColore(String colore) {
+        this.colore = colore;
     }
 
-    public String get_Path_Immagini() {
-        return _Path_Immagini;
+    public String getPathImmagini() {
+        return pathImmagini;
     }
 
-    public void set_Path_Immagini(String _Path_Immagini) {
-        this._Path_Immagini = _Path_Immagini;
+    public void setPathImmagini(String pathImmagini) {
+        this.pathImmagini = pathImmagini;
     }
 
-    public Date get_DataInizioValidita() {
-        return _DataInizioValidita;
+    public Date getDataInizioValidita() {
+        return dataInizioValidita;
     }
 
-    public void set_DataInizioValidita(Date _DataInizioValidita) {
-        this._DataInizioValidita = _DataInizioValidita;
+    public void setDataInizioValidita(Date dataInizioValidita) {
+        this.dataInizioValidita = dataInizioValidita;
     }
 
-    public Date get_DateFineValidita() {
-        return _DateFineValidita;
+    public Date getDateFineValidita() {
+        return dateFineValidita;
     }
 
-    public void set_DateFineValidita(Date _DateFineValidita) {
-        this._DateFineValidita = _DateFineValidita;
+    public void setDateFineValidita(Date dateFineValidita) {
+        this.dateFineValidita = dateFineValidita;
     }
 }

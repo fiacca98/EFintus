@@ -2,107 +2,97 @@ package com.lynx.EFintus.commercio.classes;
 
 public class Produttore {
 
-    private int _ID;
-    private String _nome;
-    private String _indirizzo;
-    private String _citta;
-    private String _cap;
-    private String _telefono;
-    private String _email;
-    private String _descrizione;
-    private String _partitaIVA;
+    private int id;
+    private String nome;
+    private String indirizzo;
+    private String citta;
+    private String cap;
+    private String telefono;
+    private String email;
+    private String descrizione;
+    private String partitaIVA;
 
-    public Produttore(
-            int ID,
-            String nome,
-            String indirizzo,
-            String citta,
-            String cap,
-            String telefono,
-            String email,
-            String descrizione,
-            String partitaIVA) {
-
-        this._ID = ID;
-        this._nome = nome;
-        this._indirizzo = indirizzo;
-        this._citta = citta;
-        this._cap = cap;
-        this._telefono = telefono;
-        this._email = email;
-        this._descrizione = descrizione;
-        this._partitaIVA = partitaIVA;
+    public Produttore(int id, String nome, String indirizzo, String citta, String cap, String telefono, String email, String descrizione, String partitaIVA) {
+        this.id = id;
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+        this.cap = cap;
+        this.telefono = telefono;
+        this.email = email;
+        this.descrizione = descrizione;
+        this.partitaIVA = partitaIVA;
     }
 
-    public int get_ID() {
-        return _ID;
+    public int getId() {
+        return id;
     }
 
-    public void set_ID(int _ID) {
-        this._ID = _ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String get_nome() {
-        return _nome;
+    public String getNome() {
+        return nome;
     }
 
-    public void set_nome(String _nome) {
-        this._nome = _nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String get_indirizzo() {
-        return _indirizzo;
+    public String getIndirizzo() {
+        return indirizzo;
     }
 
-    public void set_indirizzo(String _indirizzo) {
-        this._indirizzo = _indirizzo;
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 
-    public String get_citta() {
-        return _citta;
+    public String getCitta() {
+        return citta;
     }
 
-    public void set_citta(String _citta) {
-        this._citta = _citta;
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 
-    public String get_cap() {
-        return _cap;
+    public String getCap() {
+        return cap;
     }
 
-    public void set_cap(String _cap) {
-        this._cap = _cap;
+    public void setCap(String cap) {
+        this.cap = cap;
     }
 
-    public String get_telefono() {
-        return _telefono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void set_telefono(String _telefono) {
-        this._telefono = _telefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String get_email() {
-        return _email;
+    public String getEmail() {
+        return email;
     }
 
-    public void set_email(String _email) {
-        this._email = _email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String get_descrizione() {
-        return _descrizione;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void set_descrizione(String _descrizione) {
-        this._descrizione = _descrizione;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
-    public String get_partitaIVA() {
-        return _partitaIVA;
+    public String getPartitaIVA() {
+        return partitaIVA;
     }
 
-    public void set_partitaIVA(String _partitaIVA) {
-        this._partitaIVA = _partitaIVA;
+    public void setPartitaIVA(String partitaIVA) {
+        this.partitaIVA = partitaIVA;
     }
 }

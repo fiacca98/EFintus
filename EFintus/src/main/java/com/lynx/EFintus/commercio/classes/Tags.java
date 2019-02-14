@@ -2,27 +2,27 @@ package com.lynx.EFintus.commercio.classes;
 
 public class Tags {
 
-    private int _ID;
-    private String _Nome;
+    private int id;
+    private String nome;
 
-    public Tags(int ID, String Nome) {
-        this._ID = ID;
-        this._Nome = Nome;
+    public Tags(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
     }
 
-    public int get_ID() {
-        return _ID;
+    public int getId() {
+        return id;
     }
 
-    public void set_ID(int _ID) {
-        this._ID = _ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String get_Nome() {
-        return _Nome;
+    public String getNome() {
+        return nome;
     }
 
-    public void set_Nome(String _Nome) {
-        this._Nome = _Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

@@ -4,73 +4,67 @@ import java.sql.Date;
 
 public class Recensione {
 
-    private int _ID_utente;
-    private int _ID_prodotto;
-    private int _ID_ordine;
-    private String _descrizione;
-    private int _voto;
-    private Date _data;
+    private int idUtente;
+    private int idProdotto;
+    private int idOrdine;
+    private String descrizione;
+    private int voto;
+    private Date data;
 
-    public Recensione(int ID_utente,
-                      int ID_prodotto,
-                      int ID_ordine,
-                      String descrizione,
-                      int voto,
-                      Date data) {
-
-        this._ID_utente = ID_utente;
-        this._ID_prodotto = ID_prodotto;
-        this._ID_ordine = ID_ordine;
-        this._descrizione = descrizione;
-        this._voto = voto;
-        this._data = data;
+    public Recensione(int idUtente, int idProdotto, int idOrdine, String descrizione, int voto, Date data) {
+        this.idUtente = idUtente;
+        this.idProdotto = idProdotto;
+        this.idOrdine = idOrdine;
+        this.descrizione = descrizione;
+        this.voto = voto;
+        this.data = data;
     }
 
-    public int get_ID_utente() {
-        return _ID_utente;
+    public int getIdUtente() {
+        return idUtente;
     }
 
-    public void set_ID_utente(int _ID_utente) {
-        this._ID_utente = _ID_utente;
+    public void setIdUtente(int idUtente) {
+        this.idUtente = idUtente;
     }
 
-    public int get_ID_prodotto() {
-        return _ID_prodotto;
+    public int getIdProdotto() {
+        return idProdotto;
     }
 
-    public void set_ID_prodotto(int _ID_prodotto) {
-        this._ID_prodotto = _ID_prodotto;
+    public void setIdProdotto(int idProdotto) {
+        this.idProdotto = idProdotto;
     }
 
-    public int get_ID_ordine() {
-        return _ID_ordine;
+    public int getIdOrdine() {
+        return idOrdine;
     }
 
-    public void set_ID_ordine(int _ID_ordine) {
-        this._ID_ordine = _ID_ordine;
+    public void setIdOrdine(int idOrdine) {
+        this.idOrdine = idOrdine;
     }
 
-    public String get_descrizione() {
-        return _descrizione;
+    public String getDescrizione() {
+        return descrizione;
     }
 
-    public void set_descrizione(String _descrizione) {
-        this._descrizione = _descrizione;
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
-    public int get_voto() {
-        return _voto;
+    public int getVoto() {
+        return voto;
     }
 
-    public void set_voto(int _voto) {
-        this._voto = _voto;
+    public void setVoto(int voto) {
+        this.voto = voto;
     }
 
-    public Date get_data() {
-        return _data;
+    public Date getData() {
+        return data;
     }
 
-    public void set_data(Date _data) {
-        this._data = _data;
+    public void setData(Date data) {
+        this.data = data;
     }
 }

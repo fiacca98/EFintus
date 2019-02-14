@@ -2,119 +2,117 @@ package com.lynx.EFintus.commercio.classes;
 
 public class Utente {
 
-    private int _ID;
-    private String _Nome;
-    private String _Cognome;
-    private String _Email;
-    private String _Password;
-    private String _Indirizzo;
-    private String _Citta;
-    private String _CAP;
-    private String _Stato;
-    private String _Telefono;
-    private String _PartitaIVA;
+    private int id;
+    private String nome;
+    private String cognome;
+    private String email;
+    private String password;
+    private String indirizzo;
+    private String citta;
+    private String cap;
+    private String stato;
+    private String telefono;
+    private String partitaIva;
 
-    public Utente(int ID, String Nome, String Cognome, String Email, String Password, String Indirizzo, String Citta,
-	    String CAP, String Stato, String Telefono, String PartitaIVA) {
-	this._ID = ID;
-	this._Nome = Nome;
-	this._Cognome = Cognome;
-	this._Email = Email;
-	this._Password = Password;
-	this._Indirizzo = Indirizzo;
-	this._Citta = Citta;
-	this._CAP = CAP;
-	this._Stato = Stato;
-	this._Telefono = Telefono;
-	this._PartitaIVA = PartitaIVA;
+    public Utente(int id, String nome, String cognome, String email, String password, String indirizzo, String citta, String cap, String stato, String telefono, String partitaIva) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.email = email;
+        this.password = password;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+        this.cap = cap;
+        this.stato = stato;
+        this.telefono = telefono;
+        this.partitaIva = partitaIva;
     }
 
-    public int get_ID() {
-	return _ID;
+    public int getId() {
+        return id;
     }
 
-    public void set_ID(int _ID) {
-	this._ID = _ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String get_Nome() {
-	return _Nome;
+    public String getNome() {
+        return nome;
     }
 
-    public void set_Nome(String _Nome) {
-	this._Nome = _Nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String get_Cognome() {
-	return _Cognome;
+    public String getCognome() {
+        return cognome;
     }
 
-    public void set_Cognome(String _Cognome) {
-	this._Cognome = _Cognome;
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
     }
 
-    public String get_Email() {
-	return _Email;
+    public String getEmail() {
+        return email;
     }
 
-    public void set_Email(String _Email) {
-	this._Email = _Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String get_Password() {
-	return _Password;
+    public String getPassword() {
+        return password;
     }
 
-    public void set_Password(String _Password) {
-	this._Password = _Password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String get_Indirizzo() {
-	return _Indirizzo;
+    public String getIndirizzo() {
+        return indirizzo;
     }
 
-    public void set_Indirizzo(String _Indirizzo) {
-	this._Indirizzo = _Indirizzo;
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 
-    public String get_Citta() {
-	return _Citta;
+    public String getCitta() {
+        return citta;
     }
 
-    public void set_Citta(String _Citta) {
-	this._Citta = _Citta;
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 
-    public String get_CAP() {
-	return _CAP;
+    public String getCap() {
+        return cap;
     }
 
-    public void set_CAP(String _CAP) {
-	this._CAP = _CAP;
+    public void setCap(String cap) {
+        this.cap = cap;
     }
 
-    public String get_Stato() {
-	return _Stato;
+    public String getStato() {
+        return stato;
     }
 
-    public void set_Stato(String _Stato) {
-	this._Stato = _Stato;
+    public void setStato(String stato) {
+        this.stato = stato;
     }
 
-    public String get_Telefono() {
-	return _Telefono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void set_Telefono(String _Telefono) {
-	this._Telefono = _Telefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String get_PartitaIVA() {
-	return _PartitaIVA;
+    public String getPartitaIva() {
+        return partitaIva;
     }
 
-    public void set_PartitaIVA(String _PartitaIVA) {
-	this._PartitaIVA = _PartitaIVA;
+    public void setPartitaIva(String partitaIva) {
+        this.partitaIva = partitaIva;
     }
-
 }

@@ -2,39 +2,37 @@ package com.lynx.EFintus.commercio.classes;
 
 public class Categoria {
 
-    private int _ID;
-    private String _nome;
-    private int _parentID;
+    private int id;
+    private String nome;
+    private int parentId;
 
-    public Categoria(int ID,
-                     String nome,
-                     int parentID) {
-        this._ID = ID;
-        this._nome = nome;
-        this._parentID = parentID;
+    public Categoria(int id, String nome, int parentId) {
+        this.id = id;
+        this.nome = nome;
+        this.parentId = parentId;
     }
 
-    public int get_ID() {
-        return _ID;
+    public int getId() {
+        return id;
     }
 
-    public void set_ID(int _ID) {
-        this._ID = _ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String get_nome() {
-        return _nome;
+    public String getNome() {
+        return nome;
     }
 
-    public void set_nome(String _nome) {
-        this._nome = _nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int get_parentID() {
-        return _parentID;
+    public int getParentId() {
+        return parentId;
     }
 
-    public void set_parentID(int _parentID) {
-        this._parentID = _parentID;
+    public void setParentId(int parentId) {
+        this.parentId = parentId;
     }
 }
