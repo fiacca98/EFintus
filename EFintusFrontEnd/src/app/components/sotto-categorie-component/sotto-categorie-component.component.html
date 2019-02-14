@@ -1,0 +1,10 @@
+<h2>{{category.name | uppercase}}</h2>
+<div>
+    <div>
+        <ul>
+            <li *ngFor="let category of categories">
+                <a (click)="showDetail(category.id)" class="nav-link col-sm-2">{{category.nome}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

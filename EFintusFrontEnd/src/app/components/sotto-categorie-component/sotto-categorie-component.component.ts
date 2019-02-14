@@ -10,25 +10,40 @@ import { ActivatedRoute, RouterEvent, Router } from '@angular/router';
 })
 export class SottoCategorieComponentComponent implements OnInit {
 
-  category: CategoryBean;
+  // category: CategoryBean;
+  categories: CategoryBean[] = [];
 
   constructor(  
     
     private route: ActivatedRoute,
     private router: Router,
-    private categoryService: CategorieServiceService) {
+    private categoryService: CategorieServiceService,
+) {
 
      }
 
   ngOnInit() {
-    this.getCategory()
+    this.getCategories()
 
 }
 
-getCategory(): void {
+// getCategory(): void {
+//     const id = +this.route.snapshot.paramMap.get('id');
+//     this.categoryService.getCategory(id)
+//       .subscribe(category => this.category = category);
+//       console.log(this.category)
+//   }
+
+  getCategories(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.categoryService.getCategory(id)
-      .subscribe(category => this.category = category);
+    this.categoryService.getCategoriesFromParentId(id)
+      .subscribe(categories => this.categories = categories);
+      console.log(this.categories)
+  }
+
+
+  showDetail(id: number){
+    this.router.navigate(["/sottocategorie/" + id]);
   }
 
 }
