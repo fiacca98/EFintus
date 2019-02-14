@@ -18,4 +18,13 @@ public abstract class GenericDao<T> implements Dao<T> {
 	}
 	return con;
     }
+
+    public abstract String getTableName();
+
+    public abstract String getColumns();
+
+    public String getTableAndColumns() {
+
+	return getTableName() + " " + getColumns();
+    }
 }
