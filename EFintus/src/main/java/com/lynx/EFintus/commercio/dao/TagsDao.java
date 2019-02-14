@@ -46,7 +46,7 @@ public class TagsDao extends GenericDao<Tags> {
         PreparedStatement ps = con
                 .prepareStatement("insert into " + getTableAndColumns() + " values (?)");
 
-        ps.setString(1, tags.get_Nome());
+        ps.setString(1, tags.getNome());
 
         int status = ps.executeUpdate();
 
@@ -58,8 +58,8 @@ public class TagsDao extends GenericDao<Tags> {
 
         Connection con = getConnection();
         PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set Utente=? WHERE id=?");
-        ps.setString(1, tags.get_Nome());
-        ps.setInt(2, tags.get_ID());
+        ps.setString(1, tags.getNome());
+        ps.setInt(2, tags.getId());
 
         ps.executeUpdate();
 
@@ -70,7 +70,7 @@ public class TagsDao extends GenericDao<Tags> {
     public void delete(Tags tags) throws SQLException {
         Connection con = getConnection();
         PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
-        ps.setInt(1, tags.get_ID());
+        ps.setInt(1, tags.getId());
         ps.executeUpdate();
         con.close();
     }

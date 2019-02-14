@@ -40,15 +40,15 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 	PreparedStatement ps = con
 		.prepareStatement("insert into " + getTableAndColumns() + " values (?,?,?,?,?,?,?,?,?)");
 
-	ps.setInt(1, produttore.get_ID());
-	ps.setString(2, produttore.get_nome());
-	ps.setString(3, produttore.get_indirizzo());
-	ps.setString(4, produttore.get_citta());
-	ps.setString(5, produttore.get_cap());
-	ps.setString(6, produttore.get_telefono());
-	ps.setString(7, produttore.get_email());
-	ps.setString(8, produttore.get_descrizione());
-	ps.setString(9, produttore.get_partitaIVA());
+	ps.setInt(1, produttore.getId());
+	ps.setString(2, produttore.getNome());
+	ps.setString(3, produttore.getIndirizzo());
+	ps.setString(4, produttore.getCitta());
+	ps.setString(5, produttore.getCap());
+	ps.setString(6, produttore.getTelefono());
+	ps.setString(7, produttore.getEmail());
+	ps.setString(8, produttore.getDescrizione());
+	ps.setString(9, produttore.getPartitaIVA());
 
 	int status = ps.executeUpdate();
 
@@ -60,15 +60,15 @@ public class ProduttoreDao extends GenericDao<Produttore> {
         Connection con = getConnection();
         PreparedStatement ps = con
                 .prepareStatement("update" + getTableName() + "set " +
-                        "nome="+produttore.get_nome()+
-                        "indirizzo="+produttore.get_indirizzo()+
-                        "citta="+produttore.get_citta()+
-                        "cap="+produttore.get_cap()+
-                        "telefono="+produttore.get_telefono()+
-                        "email="+produttore.get_email()+
-                        "descrizione="+produttore.get_descrizione()+
-                        "partitaIVA="+produttore.get_partitaIVA()+
-                        "WHERE id="+produttore.get_ID()
+                        "nome="+produttore.getNome()+
+                        "indirizzo="+produttore.getIndirizzo()+
+                        "citta="+produttore.getCitta()+
+                        "cap="+produttore.getCap()+
+                        "telefono="+produttore.getTelefono()+
+                        "email="+produttore.getEmail()+
+                        "descrizione="+produttore.getDescrizione()+
+                        "partitaIVA="+produttore.getPartitaIVA()+
+                        "WHERE id="+produttore.getId()
                 );
 
 	int status = ps.executeUpdate();
@@ -79,7 +79,7 @@ public class ProduttoreDao extends GenericDao<Produttore> {
     @Override
     public void delete(Produttore produttore) throws SQLException {
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("DELETE FROM" + getTableName() + "WHERE ID=" + produttore.get_ID());
+	PreparedStatement ps = con.prepareStatement("DELETE FROM" + getTableName() + "WHERE ID=" + produttore.getId());
 
 	int status = ps.executeUpdate();
 

@@ -42,8 +42,8 @@ public class CategorieDao extends GenericDao<Categoria> {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("insert into " + getTableAndColumns() + " values (?,?)");
 
-	ps.setString(1, categoria.get_nome());
-	ps.setInt(2, categoria.get_parentID());
+	ps.setString(1, categoria.getNome());
+	ps.setInt(2, categoria.getParentId());
 
 	ps.executeUpdate();
 
@@ -56,9 +56,9 @@ public class CategorieDao extends GenericDao<Categoria> {
 
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set nome=?, ParentID=? WHERE id=?");
-	ps.setString(1, categoria.get_nome());
-	ps.setInt(2, categoria.get_parentID());
-	ps.setInt(3, categoria.get_ID());
+	ps.setString(1, categoria.getNome());
+	ps.setInt(2, categoria.getParentId());
+	ps.setInt(3, categoria.getId());
 
 	ps.executeUpdate();
 
@@ -70,7 +70,7 @@ public class CategorieDao extends GenericDao<Categoria> {
     public void delete(Categoria categoria) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
-	ps.setInt(1, categoria.get_ID());
+	ps.setInt(1, categoria.getId());
 	ps.executeUpdate();
 	con.close();
 

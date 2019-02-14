@@ -48,12 +48,12 @@ public class RecensioneDao extends GenericDao<Recensione> {
         PreparedStatement ps = con
                 .prepareStatement("insert into " + getTableAndColumns() + " values (?,?,?,?,?,?)");
 
-        ps.setInt(1, recensione.get_ID_utente());
-        ps.setInt(2, recensione.get_ID_prodotto());
-        ps.setInt(3, recensione.get_ID_ordine());
-        ps.setString(4, recensione.get_descrizione());
-        ps.setInt(5, recensione.get_voto());
-        ps.setDate(6, recensione.get_data());
+        ps.setInt(1, recensione.getIdUtente());
+        ps.setInt(2, recensione.getIdProdotto());
+        ps.setInt(3, recensione.getIdOrdine());
+        ps.setString(4, recensione.getDescrizione());
+        ps.setInt(5, recensione.getVoto());
+        ps.setDate(6, recensione.getData());
 
         int status = ps.executeUpdate();
 
@@ -65,12 +65,12 @@ public class RecensioneDao extends GenericDao<Recensione> {
         Connection con = getConnection();
         PreparedStatement ps = con
                 .prepareStatement("update" + getTableName() + "set " +
-                        "ID_utente="+recensione.get_ID_utente()+
-                        "ID_prodotto="+recensione.get_ID_prodotto()+
-                        "ID_ordine="+recensione.get_ID_ordine()+
-                        "descrizione="+recensione.get_descrizione()+
-                        "voto="+recensione.get_voto()+
-                        "data="+recensione.get_data()
+                        "ID_utente="+recensione.getIdUtente()+
+                        "ID_prodotto="+recensione.getIdProdotto()+
+                        "ID_ordine="+recensione.getIdOrdine()+
+                        "descrizione="+recensione.getDescrizione()+
+                        "voto="+recensione.getVoto()+
+                        "data="+recensione.getData()
                 );
 
         int status = ps.executeUpdate();
@@ -82,7 +82,7 @@ public class RecensioneDao extends GenericDao<Recensione> {
     public void delete(Recensione recensione) throws SQLException {
         Connection con = getConnection();
         PreparedStatement ps = con
-                .prepareStatement("DELETE FROM" + getTableName()+"WHERE ID_utente="+recensione.get_ID_utente()+"AND ID_prodotto="+recensione.get_ID_prodotto());
+                .prepareStatement("DELETE FROM" + getTableName()+"WHERE ID_utente="+recensione.getIdUtente()+"AND ID_prodotto="+recensione.getIdProdotto());
 
         int status = ps.executeUpdate();
 
