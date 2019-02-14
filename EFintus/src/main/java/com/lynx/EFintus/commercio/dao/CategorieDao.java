@@ -13,7 +13,6 @@ public class CategorieDao extends GenericDao<Categoria> {
 
     private String TABLE_NAME = "categoria";
 
-    @Override
     public Categoria get(int id) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
