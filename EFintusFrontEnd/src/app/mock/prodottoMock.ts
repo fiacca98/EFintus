@@ -1,0 +1,15 @@
+import { ProdottoBean } from '../bean/prodottoBean';
+
+
+export const PRODOTTOMOCK: ProdottoBean[] = [
+      { id: 1, nome: 'Categoria 1', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 2, nome: 'Categoria 2', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 3, nome: 'Categoria 3', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 4, nome: 'Categoria 4', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 5, nome: 'Categoria 5', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 6, nome: 'Categoria 6', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 7, nome: 'Categoria 7', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 8, nome: 'Categoria 8', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+    { id: 9, nome: 'Categoria 9', idProduttore: 1, prezzo: 99, IdCategoria: 1, descrizioneProdotto: 'Molto bello assai', misure: '30x20x30', peso: 11, colore: "blallo", pathImmagini: "https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg", dataInizioValidità: "01-01-2019", dataFineValidità: "02-02-2020"},
+
+  ]
