@@ -1,6 +1,6 @@
 package com.lynx.EFintus.commercio.dao;
 
-import com.lynx.EFintus.commercio.classes.Tags;
+import com.lynx.EFintus.commercio.classes.WishList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TagsDao extends GenericDao<Tags> {
+public class WishListDao extends GenericDao<WishList> {
 
-    private String TABLE_NAME = "tags";
+    private String TABLE_NAME = "wishList";
 
-    public Tags getById(int id) throws SQLException {
+    public WishList getById(int id) throws SQLException {
         Connection con = getConnection();
         PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
         ps.setInt(1, id);
@@ -24,29 +24,30 @@ public class TagsDao extends GenericDao<Tags> {
     }
 
     @Override
-    public List<Tags> getAll() throws SQLException {
-        List<Tags> tags = new ArrayList<Tags>();
+    public List<WishList> getAll() throws SQLException {
+        List<WishList> wishLists = new ArrayList<WishList>();
 
         Connection con = getConnection();
         PreparedStatement ps = con.prepareStatement("select * from " + getTableName());
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
-            tags.add(this.fromResultSetToBean(rs));
+            wishLists.add(this.fromResultSetToBean(rs));
         }
 
         con.close();
 
-        return tags;
+        return wishLists;
 
     }
 
     @Override
-    public void save(Tags tags) throws SQLException {
+    public void save(WishList wishLists) throws SQLException {
         Connection con = getConnection();
         PreparedStatement ps = con
-                .prepareStatement("insert into " + getTableAndColumns() + " values (?)");
+                .prepareStatement("insert into " + getTableAndColumns() + " values (?, ?)");
 
-        ps.setString(1, tags.getNome());
+        ps.setInt(1, wishLists.getUtente());
+        ps.setString(2, wishLists.getNome());
 
         int status = ps.executeUpdate();
 
@@ -54,12 +55,13 @@ public class TagsDao extends GenericDao<Tags> {
     }
 
     @Override
-    public void update(Tags tags) throws SQLException {
+    public void update(WishList wishLists) throws SQLException {
 
         Connection con = getConnection();
-        PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set Nome=? WHERE id=?");
-        ps.setString(1, tags.getNome());
-        ps.setInt(2, tags.getId());
+        PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set Utente=?, Nome=? WHERE id=?");
+        ps.setInt(1, wishLists.getUtente());
+        ps.setString(2, wishLists.getNome());
+        ps.setInt(3, wishLists.getId());
 
         ps.executeUpdate();
 
@@ -67,10 +69,10 @@ public class TagsDao extends GenericDao<Tags> {
     }
 
     @Override
-    public void delete(Tags tags) throws SQLException {
+    public void delete(WishList wishLists) throws SQLException {
         Connection con = getConnection();
         PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
-        ps.setInt(1, tags.getId());
+        ps.setInt(1, wishLists.getId());
         ps.executeUpdate();
         con.close();
     }
@@ -82,12 +84,12 @@ public class TagsDao extends GenericDao<Tags> {
 
     @Override
     public String getColumns() {
-        return "(Nome)";
+        return "(Utente, Nome)";
     }
 
     @Override
-    public Tags fromResultSetToBean(ResultSet rs) throws SQLException {
-        Tags tags = new Tags(rs.getInt(1), rs.getString(2));
-        return tags;
+    public WishList fromResultSetToBean(ResultSet rs) throws SQLException {
+        WishList wishLists = new WishList(rs.getInt(1), rs.getInt(2), rs.getString(3));
+        return wishLists;
     }
 }
