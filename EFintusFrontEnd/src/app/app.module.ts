@@ -9,6 +9,7 @@ import { HeaderComponentComponent } from './components/header-component/header-c
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
 import { MessageComponentComponent } from './components/message-component/message-component.component';
+import { ListaProdottiComponentComponent } from './components/lista-prodotti-component/lista-prodotti-component.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MessageComponentComponent } from './components/message-component/messag
     PageNotFoundComponentComponent,
     CategorieComponentComponent,
     SottoCategorieComponentComponent,
-    MessageComponentComponent
+    MessageComponentComponent,
+    ListaProdottiComponentComponent
   ],
   imports: [
     BrowserModule,

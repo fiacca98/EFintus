@@ -40,7 +40,7 @@ export class CategorieComponentComponent implements OnInit {
   }
 
 
-  showDetail(id: number){
+  goToSottocategorie(id: number){
     this.router.navigate(["/sottocategorie/" + id]);
   }
 }

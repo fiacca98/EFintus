@@ -1,3 +1,4 @@
+import { ListaProdottiComponentComponent } from './components/lista-prodotti-component/lista-prodotti-component.component';
 import { CategorieComponentComponent } from './components/categorie-component/categorie-component.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponentComponent },
   { path: 'categorie', component: CategorieComponentComponent },
   { path: 'sottocategorie/:id', component: SottoCategorieComponentComponent },
+  { path: 'listaProdotti/:id', component: ListaProdottiComponentComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponentComponent }
 

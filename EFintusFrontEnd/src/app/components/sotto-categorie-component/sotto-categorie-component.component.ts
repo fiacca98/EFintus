@@ -10,9 +10,10 @@ import { ActivatedRoute, RouterEvent, Router } from '@angular/router';
 })
 export class SottoCategorieComponentComponent implements OnInit {
 
-  // category: CategoryBean;
-  categories: CategoryBean[] = [];
-
+   parentCategory: CategoryBean;
+   categories: CategoryBean[] = [];
+   titoloOffertaCategoria: string;
+   
   constructor(  
     
     private route: ActivatedRoute,
@@ -23,16 +24,17 @@ export class SottoCategorieComponentComponent implements OnInit {
      }
 
   ngOnInit() {
+    this.getCategory()
     this.getCategories()
 
 }
 
-// getCategory(): void {
-//     const id = +this.route.snapshot.paramMap.get('id');
-//     this.categoryService.getCategory(id)
-//       .subscribe(category => this.category = category);
-//       console.log(this.category)
-//   }
+getCategory(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.categoryService.getCategory(id)
+      .subscribe(category => this.parentCategory = category);
+      this.titoloOffertaCategoria = this.parentCategory.nome
+  }
 
   getCategories(): void {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -42,8 +44,8 @@ export class SottoCategorieComponentComponent implements OnInit {
   }
 
 
-  showDetail(id: number){
-    this.router.navigate(["/sottocategorie/" + id]);
+  goToProductList(id: number){
+    this.router.navigate(["/listaProdotti/" + id]);
   }
 
 }
