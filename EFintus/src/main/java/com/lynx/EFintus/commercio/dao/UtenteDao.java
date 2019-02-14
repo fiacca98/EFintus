@@ -13,8 +13,7 @@ public class UtenteDao extends GenericDao<Utente> {
 
     private String TABLE_NAME = "utente";
 
-    @Override
-    public Utente get(int id) throws SQLException {
+    public Utente getByID(int id) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
 	ps.setInt(1, id);
