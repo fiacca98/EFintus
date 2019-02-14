@@ -19,6 +19,7 @@ public class UtenteDao extends GenericDao<Utente> {
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
 	ps.setInt(1, id);
 	ResultSet rs = ps.executeQuery();
+	con.close();
 	return fromResultSetToBean(rs);
 
     }
@@ -62,8 +63,26 @@ public class UtenteDao extends GenericDao<Utente> {
     }
 
     @Override
-    public void update(Utente utente) {
+    public void update(Utente utente) throws SQLException {
 
+	Connection con = getConnection();
+	PreparedStatement ps = con.prepareStatement("update " + getTableName()
+		+ " set Nome=?, Cognome=?, Email=?, Password=?, Indirizzo=?, Città=?, CAP=?, Stato=?, Telefono=?, PartitaIVA=? WHERE id=?");
+	ps.setString(1, utente.get_Nome());
+	ps.setString(2, utente.get_Cognome());
+	ps.setString(3, utente.get_Email());
+	ps.setString(3, utente.get_Password());
+	ps.setString(3, utente.get_Indirizzo());
+	ps.setString(3, utente.get_Citta());
+	ps.setString(3, utente.get_CAP());
+	ps.setString(3, utente.get_Stato());
+	ps.setString(3, utente.get_Telefono());
+	ps.setString(3, utente.get_PartitaIVA());
+	ps.setInt(5, utente.get_ID());
+
+	ps.executeUpdate();
+
+	con.close();
     }
 
     @Override
@@ -72,6 +91,7 @@ public class UtenteDao extends GenericDao<Utente> {
 	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
 	ps.setInt(1, utente.get_ID());
 	ps.executeUpdate();
+	con.close();
     }
 
     @Override
