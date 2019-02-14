@@ -1,6 +1,8 @@
 <h2>CATEGORIE</h2>
-<ul class="heroes">
-    <li *ngFor="let category of categories">
-        <span>{{category.nome}}</span>
-    </li>
-</ul>
+<div>
+    <ul>
+        <li *ngFor="let category of categories">
+            <a (click)="showDetail(category.id)" class="nav-link col-sm-2">{{category.nome}}</a>
+        </li>
+    </ul>
+</div>
