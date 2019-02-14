@@ -57,7 +57,7 @@ public class UtenteDao extends GenericDao<Utente> {
 	ps.setString(9, utente.get_Telefono());
 	ps.setString(10, utente.get_PartitaIVA());
 
-	int status = ps.executeUpdate();
+	ps.executeUpdate();
 
 	con.close();
     }
@@ -71,14 +71,14 @@ public class UtenteDao extends GenericDao<Utente> {
 	ps.setString(1, utente.get_Nome());
 	ps.setString(2, utente.get_Cognome());
 	ps.setString(3, utente.get_Email());
-	ps.setString(3, utente.get_Password());
-	ps.setString(3, utente.get_Indirizzo());
-	ps.setString(3, utente.get_Citta());
-	ps.setString(3, utente.get_CAP());
-	ps.setString(3, utente.get_Stato());
-	ps.setString(3, utente.get_Telefono());
-	ps.setString(3, utente.get_PartitaIVA());
-	ps.setInt(5, utente.get_ID());
+	ps.setString(4, utente.get_Password());
+	ps.setString(5, utente.get_Indirizzo());
+	ps.setString(6, utente.get_Citta());
+	ps.setString(7, utente.get_CAP());
+	ps.setString(8, utente.get_Stato());
+	ps.setString(9, utente.get_Telefono());
+	ps.setString(10, utente.get_PartitaIVA());
+	ps.setInt(11, utente.get_ID());
 
 	ps.executeUpdate();
 

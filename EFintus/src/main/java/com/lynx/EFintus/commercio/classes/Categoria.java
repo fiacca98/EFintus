@@ -1,12 +1,12 @@
 package com.lynx.EFintus.commercio.classes;
 
-public class Categorie {
+public class Categoria {
 
     private int _ID;
     private String _nome;
     private int _parentID;
 
-    public Categorie(int ID,
+    public Categoria(int ID,
                      String nome,
                      int parentID) {
         this._ID = ID;
