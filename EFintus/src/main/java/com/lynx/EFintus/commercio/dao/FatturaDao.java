@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lynx.EFintus.commercio.classes.Categoria;
+import com.lynx.EFintus.commercio.classes.Fattura;
 
-public class CategorieDao extends GenericDao<Categoria> {
+public class FatturaDao extends GenericDao<Fattura> {
 
-    private String TABLE_NAME = "categoria";
+    private String TABLE_NAME = "fattura";
 
-    public Categoria getById(int id) throws SQLException {
+    public Fattura getById(int id) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
 	ps.setInt(1, id);
@@ -23,27 +23,27 @@ public class CategorieDao extends GenericDao<Categoria> {
     }
 
     @Override
-    public List<Categoria> getAll() throws SQLException {
-	List<Categoria> categorie = new ArrayList<Categoria>();
+    public List<Fattura> getAll() throws SQLException {
+	List<Fattura> fatture = new ArrayList<Fattura>();
 
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName());
 	ResultSet rs = ps.executeQuery();
 	while (rs.next()) {
-	    categorie.add(this.fromResultSetToBean(rs));
+	    fatture.add(this.fromResultSetToBean(rs));
 	}
 	con.close();
 
-	return categorie;
+	return fatture;
     }
 
     @Override
-    public void save(Categoria categoria) throws SQLException {
+    public void save(Fattura fattura) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("insert into " + getTableAndColumns() + " values (?,?)");
 
-	ps.setString(1, categoria.getNome());
-	ps.setInt(2, categoria.getParentId());
+	ps.setInt(1, fattura.getIdOrdine());
+	ps.setString(2, fattura.getMetodoPagamento());
 
 	ps.executeUpdate();
 
@@ -52,13 +52,12 @@ public class CategorieDao extends GenericDao<Categoria> {
     }
 
     @Override
-    public void update(Categoria categoria) throws SQLException {
-
+    public void update(Fattura fattura) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set nome=?, ParentID=? WHERE id=?");
-	ps.setString(1, categoria.getNome());
-	ps.setInt(2, categoria.getParentId());
-	ps.setInt(3, categoria.getId());
+	ps.setInt(1, fattura.getIdOrdine());
+	ps.setString(2, fattura.getMetodoPagamento());
+	ps.setInt(3, fattura.getId());
 
 	ps.executeUpdate();
 
@@ -67,19 +66,19 @@ public class CategorieDao extends GenericDao<Categoria> {
     }
 
     @Override
-    public void delete(Categoria categoria) throws SQLException {
+    public void delete(Fattura fattura) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
-	ps.setInt(1, categoria.getId());
+	ps.setInt(1, fattura.getId());
 	ps.executeUpdate();
 	con.close();
 
     }
 
     @Override
-    public Categoria fromResultSetToBean(ResultSet rs) throws SQLException {
-	Categoria categoria = new Categoria(rs.getInt(1), rs.getString(2), rs.getInt(3));
-	return categoria;
+    public Fattura fromResultSetToBean(ResultSet rs) throws SQLException {
+	Fattura fattura = new Fattura(rs.getInt(1), rs.getInt(2), rs.getString(3));
+	return fattura;
     }
 
     @Override
@@ -89,7 +88,7 @@ public class CategorieDao extends GenericDao<Categoria> {
 
     @Override
     public String getColumns() {
-	return "(nome , parentID)";
+	return "(Id_ordine, Metodo_pagamento)";
     }
 
 }
