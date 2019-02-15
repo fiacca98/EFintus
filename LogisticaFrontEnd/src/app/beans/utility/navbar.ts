@@ -1,12 +1,12 @@
 export class Navbar{
     id: number;
     name: string;
-    isDropdown: boolean;
+    dropdowns: Navbar[];
     
-    public Navbar(id: number, name: string, isDropdown: boolean){
+    public constructor(id: number, name: string, dropdowns: Navbar[]){
         this.id = id;
         this.name = name;
-        this.isDropdown = isDropdown;
+        this.dropdowns = dropdowns;
     }
     
 }
