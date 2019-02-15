@@ -14,7 +14,7 @@ public class CategoriaDao extends GenericDao<Categoria> {
 
     public Categoria getById(int id) throws SQLException {
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
+	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where idCategoria = ?");
 	ps.setInt(1, id);
 	ResultSet rs = ps.executeQuery();
 	con.close();
@@ -54,7 +54,7 @@ public class CategoriaDao extends GenericDao<Categoria> {
     public void update(Categoria categoria) throws SQLException {
 
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set nome=?, ParentID=? WHERE id=?");
+	PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set nome=?, parentId=? WHERE idCategoria=?");
 	ps.setString(1, categoria.getNome());
 	ps.setInt(2, categoria.getParentId());
 	ps.setInt(3, categoria.getId());
@@ -62,13 +62,13 @@ public class CategoriaDao extends GenericDao<Categoria> {
 	ps.executeUpdate();
 
 	con.close();
-
+	
     }
 
     @Override
     public void delete(Categoria categoria) throws SQLException {
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
+	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where idCategoria = ?");
 	ps.setInt(1, categoria.getId());
 	ps.executeUpdate();
 	con.close();
@@ -88,7 +88,7 @@ public class CategoriaDao extends GenericDao<Categoria> {
 
     @Override
     public String getColumns() {
-	return "(nome , parentID)";
+	return "(nome , parentId)";
     }
 
 }

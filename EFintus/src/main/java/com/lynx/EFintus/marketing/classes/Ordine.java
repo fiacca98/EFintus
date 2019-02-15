@@ -1,6 +1,6 @@
 package com.lynx.EFintus.marketing.classes;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Ordine {
 
@@ -9,7 +9,7 @@ public class Ordine {
     private int idUtente;
     private String stato;
 
-    public Ordine(int id, Date dataOrdine, int idUtente, String stato) {
+    public Ordine(int id, int idUtente, Date dataOrdine, String stato) {
 
 	this.id = id;
 	this.dataOrdine = dataOrdine;

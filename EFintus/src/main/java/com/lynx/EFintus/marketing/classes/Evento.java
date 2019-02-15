@@ -1,6 +1,6 @@
 package com.lynx.EFintus.marketing.classes;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Evento {
 	private int id;

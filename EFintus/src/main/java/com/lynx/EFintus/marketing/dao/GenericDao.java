@@ -11,10 +11,9 @@ public abstract class GenericDao<T> implements Dao<T> {
 	Connection con = null;
 	try {
 	    Class.forName("com.mysql.jdbc.Driver");
-	    con = DriverManager.getConnection("jdbc:mysql://10.9.129.35:3306/marketing_efintus", "fintus",
-		    "P@ssword2018$");
+	    con = DriverManager.getConnection("jdbc:mysql://10.9.129.35:3306/marketing_efintus", "fintus", "P@ssword2018$");
 	} catch (Exception e) {
-	    System.out.println(e);
+	    System.out.println(e.getMessage());
 	}
 	return con;
     }
