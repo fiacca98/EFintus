@@ -51,6 +51,9 @@ public class MetodoPagamentoDao extends GenericDao<MetodoPagamento> {
 
     }
 
+    /**
+     * Not implemented method, use delete and save
+     */
     @Override
     public void update(MetodoPagamento metodoPagamento) throws SQLException {
 
