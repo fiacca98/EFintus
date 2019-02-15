@@ -1,3 +1,4 @@
+import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { CategorieServiceService } from './../../services/categorie-service/categorie-service.service';
 import { RouterModule, Router } from '@angular/router';
 import { CategoryBean } from 'src/app/bean/CategoryBean';
@@ -19,12 +20,13 @@ export class CategorieComponentComponent implements OnInit {
   constructor(
     private router: Router,
     private route: RouterModule,
-    private categoryService: CategorieServiceService
+    private categoryService: CategorieServiceService,
+    private httpService: HttpServiceService
     ) { 
   }
 
   ngOnInit() {
-    this.getFullCategories()
+    this.getFullCategories();
 
     this.fullCategories.forEach(element => {
       if (element.parentId == null){
@@ -43,4 +45,5 @@ export class CategorieComponentComponent implements OnInit {
   goToSottocategorie(id: number){
     this.router.navigate(["/sottocategorie/" + id]);
   }
+
 }

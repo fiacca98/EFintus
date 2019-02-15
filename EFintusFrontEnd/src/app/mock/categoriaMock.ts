@@ -23,6 +23,4 @@ export const CATEGORY1MOCK :CategoryBean[] = [
     {id: 19, nome: "Categoria 19", parentId: 18},
     {id: 20, nome: "Categoria 20", parentId: 18},
     {id: 21, nome: "Categoria 21", parentId: 18},
-
-
 ]
