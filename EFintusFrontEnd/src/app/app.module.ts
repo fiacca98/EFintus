@@ -16,6 +16,7 @@ import { InMemoryDataService } from './services/in-memory-data-service/in-memory
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponentComponent } from './components/sidebar-component/sidebar-component.component';
 import { NgbRatingConfigComponentComponent } from './components/ngb-rating-config-component/ngb-rating-config-component.component';
+import { AlertComponentComponent } from './components/alert-component/alert-component.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgbRatingConfigComponentComponent } from './components/ngb-rating-confi
     ListaProdottiComponentComponent,
     ProdottoComponentComponent,
     SidebarComponentComponent,
-    NgbRatingConfigComponentComponent
+    NgbRatingConfigComponentComponent,
+    AlertComponentComponent
   ],
   imports: [
     BrowserModule,
