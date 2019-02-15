@@ -7,10 +7,10 @@ import { Navbar } from '../beans/utility/navbar';
 export class NavbarService {
 
   private navItems: Navbar[] = [
-    new Navbar(0,"Home",[new Navbar(1,"HomeSub",[])]),
-    new Navbar(1,"Ordini",[]),
-    new Navbar(2,"Magazzini",[]),
-    new Navbar(2,"Fornitori",[])
+    new Navbar(0,"Home","/home",[new Navbar(1,"HomeSub","/sub",[])]),
+    new Navbar(1,"Ordini","/ordini",[]),
+    new Navbar(2,"Magazzini","/magazzini",[]),
+    new Navbar(2,"Fornitori","/fornitori",[])
   ]
 
   constructor() { }

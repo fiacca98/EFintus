@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Logistica</a>
+  <a class="navbar-brand" href="/">Logistica</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
 
         <ng-container *ngIf="voice.dropdowns.length == 0">
           <li class="nav-item">
-            <a class="nav-link" href="#">{{voice.name}}</a>
+            <a class="nav-link" href="{{voice.link}}">{{voice.name}}</a>
           </li>
         </ng-container>
 
@@ -21,7 +21,7 @@
                   {{voice.name}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a *ngFor="let drop of voice.dropdowns" class="dropdown-item" href="#">{{drop.name}}</a>
+                  <a *ngFor="let drop of voice.dropdowns" class="dropdown-item" href="{{voice.link}}">{{drop.name}}</a>
                 </div>
             </li>
         </ng-container>

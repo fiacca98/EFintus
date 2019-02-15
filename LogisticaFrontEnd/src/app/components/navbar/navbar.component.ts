@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   menu: Navbar[] = [];
 
   constructor(private navService: NavbarService) {
-    this.menu = navService.getNavItems();
+    this.menu = this.navService.getNavItems();
   }
 
   ngOnInit() {
