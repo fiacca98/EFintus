@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/services/order.service';
+import { Ordine } from 'src/app/beans/ordine';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  private orders : Ordine[] = [];
+
+  constructor(private orderService: OrderService) { 
+    this.getOrders();
+  }
 
   ngOnInit() {
+  }
+
+  getOrders() {
+    this.orderService.getOrders()
+      .subscribe(orders => this.orders = orders);
   }
 
 }
