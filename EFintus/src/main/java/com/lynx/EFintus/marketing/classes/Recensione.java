@@ -4,34 +4,28 @@ import java.util.Date;
 
 public class Recensione {
 
-    private int idUtente;
+    private int idRecensione;
     private int idProdotto;
-    private int idOrdine;
     private String descrizione;
     private int voto;
-    private Date data;
 
-    public Recensione(int idUtente,
+    public Recensione(int idRecensione,
                       int idProdotto,
-                      int idOrdine,
                       String descrizione,
-                      int voto,
-                      Date data) {
+                      int voto) {
 
-        this.idUtente = idUtente;
+        this.idRecensione = idRecensione;
         this.idProdotto = idProdotto;
-        this.idOrdine = idOrdine;
         this.descrizione = descrizione;
         this.voto = voto;
-        this.data = data;
     }
 
-	public int getIdUtente() {
-		return idUtente;
+	public int getIdRecensione() {
+		return idRecensione;
 	}
 
-	public void setIdUtente(int idUtente) {
-		this.idUtente = idUtente;
+	public void setIdUtente(int idRecensione) {
+		this.idRecensione = idRecensione;
 	}
 
 	public int getIdProdotto() {
@@ -40,14 +34,6 @@ public class Recensione {
 
 	public void setIdProdotto(int idProdotto) {
 		this.idProdotto = idProdotto;
-	}
-
-	public int getIdOrdine() {
-		return idOrdine;
-	}
-
-	public void setIdOrdine(int idOrdine) {
-		this.idOrdine = idOrdine;
 	}
 
 	public String getDescrizione() {
@@ -65,14 +51,5 @@ public class Recensione {
 	public void setVoto(int voto) {
 		this.voto = voto;
 	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
     
 }
