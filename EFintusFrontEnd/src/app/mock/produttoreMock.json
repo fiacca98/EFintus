@@ -1,4 +1,4 @@
-[
+{"produttore":[
    {"id": 1, "nome": "q", "indirizzo":  "via q 1", "citta": "MILANO", "cap": "20981", "telefono": "1234", "email": "q@gmail.com", "descrizione": "qualcosa", "partitaIVA": "1344343"},
    {"id": 2, "nome": "w", "indirizzo":  "via w 2", "citta": "MILANO", "cap": "20981", "telefono": "4311", "email": "w@gmail.com", "descrizione": "qualcosa", "partitaIVA": "1344343"},
    {"id": 3, "nome": "e", "indirizzo":  "via e 3", "citta": "MILANO", "cap": "20981", "telefono": "4234", "email": "e@gmail.com", "descrizione": "qualcosa", "partitaIVA": "1344343"},
@@ -18,3 +18,4 @@
    {"id": 17, "nome": "j", "indirizzo": "via j 17", "citta": "MILANO", "cap": "20789", "telefono": "5432", "email": "j@gmail.com", "descrizione": "qualcosa", "partitaIVA": "7565755"},
    {"id": 18, "nome": "k", "indirizzo": "via k 18", "citta": "MILANO", "cap": "20789", "telefono": "5466", "email": "k@gmail.com", "descrizione": "qualcosa", "partitaIVA": "7565755"}
 ]
+}
