@@ -2,22 +2,12 @@ package com.lynx.EFintus.marketing.classes;
 
 public class Tags {
 
-    private int id;
     private String nome;
 
-    public Tags(int id,
+    public Tags(
                 String nome) {
-        this.id = id;
         this.nome = nome;
     }
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
