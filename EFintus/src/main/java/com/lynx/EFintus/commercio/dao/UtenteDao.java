@@ -13,8 +13,7 @@ public class UtenteDao extends GenericDao<Utente> {
 
     private String TABLE_NAME = "utente";
 
-    @Override
-    public Utente get(int id) throws SQLException {
+    public Utente getByID(int id) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " where id = ?");
 	ps.setInt(1, id);
@@ -46,18 +45,18 @@ public class UtenteDao extends GenericDao<Utente> {
 	PreparedStatement ps = con
 		.prepareStatement("insert into " + getTableAndColumns() + " values (?,?,?,?,?,?,?,?,?,?)");
 
-	ps.setString(1, utente.get_Nome());
-	ps.setString(2, utente.get_Cognome());
-	ps.setString(3, utente.get_Email());
-	ps.setString(4, utente.get_Password());
-	ps.setString(5, utente.get_Indirizzo());
-	ps.setString(6, utente.get_Citta());
-	ps.setString(7, utente.get_CAP());
-	ps.setString(8, utente.get_Stato());
-	ps.setString(9, utente.get_Telefono());
-	ps.setString(10, utente.get_PartitaIVA());
+	ps.setString(1, utente.getNome());
+	ps.setString(2, utente.getCognome());
+	ps.setString(3, utente.getEmail());
+	ps.setString(4, utente.getPassword());
+	ps.setString(5, utente.getIndirizzo());
+	ps.setString(6, utente.getCitta());
+	ps.setString(7, utente.getCap());
+	ps.setString(8, utente.getStato());
+	ps.setString(9, utente.getTelefono());
+	ps.setString(10, utente.getPartitaIva());
 
-	int status = ps.executeUpdate();
+	ps.executeUpdate();
 
 	con.close();
     }
@@ -68,17 +67,17 @@ public class UtenteDao extends GenericDao<Utente> {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("update " + getTableName()
 		+ " set Nome=?, Cognome=?, Email=?, Password=?, Indirizzo=?, Città=?, CAP=?, Stato=?, Telefono=?, PartitaIVA=? WHERE id=?");
-	ps.setString(1, utente.get_Nome());
-	ps.setString(2, utente.get_Cognome());
-	ps.setString(3, utente.get_Email());
-	ps.setString(3, utente.get_Password());
-	ps.setString(3, utente.get_Indirizzo());
-	ps.setString(3, utente.get_Citta());
-	ps.setString(3, utente.get_CAP());
-	ps.setString(3, utente.get_Stato());
-	ps.setString(3, utente.get_Telefono());
-	ps.setString(3, utente.get_PartitaIVA());
-	ps.setInt(5, utente.get_ID());
+	ps.setString(1, utente.getNome());
+	ps.setString(2, utente.getCognome());
+	ps.setString(3, utente.getEmail());
+	ps.setString(4, utente.getPassword());
+	ps.setString(5, utente.getIndirizzo());
+	ps.setString(6, utente.getCitta());
+	ps.setString(7, utente.getCap());
+	ps.setString(8, utente.getStato());
+	ps.setString(9, utente.getTelefono());
+	ps.setString(10, utente.getPartitaIva());
+	ps.setInt(11, utente.getId());
 
 	ps.executeUpdate();
 
@@ -89,7 +88,7 @@ public class UtenteDao extends GenericDao<Utente> {
     public void delete(Utente utente) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id = ?");
-	ps.setInt(1, utente.get_ID());
+	ps.setInt(1, utente.getId());
 	ps.executeUpdate();
 	con.close();
     }

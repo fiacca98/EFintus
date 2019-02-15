@@ -4,49 +4,47 @@ import java.util.Date;
 
 public class Ordine {
 
-    private int _Id;
-    private Date _Data_ordine;
-    private int _Id_utente;
-    private String _Stato;
+    private int id;
+    private Date dataOrdine;
+    private int idUtente;
+    private String stato;
 
-    public Ordine(int Id, Date Data_ordine, int Id_utente, String Stato) {
-
-	this._Id = Id;
-	this._Data_ordine = Data_ordine;
-	this._Id_utente = Id_utente;
-	this._Stato = Stato;
+    public Ordine(int id, Date dataOrdine, int idUtente, String stato) {
+        this.id = id;
+        this.dataOrdine = dataOrdine;
+        this.idUtente = idUtente;
+        this.stato = stato;
     }
 
-    public int get_Id() {
-	return _Id;
+    public int getId() {
+        return id;
     }
 
-    public void set_Id(int _Id) {
-	this._Id = _Id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date get_Data_ordine() {
-	return _Data_ordine;
+    public Date getDataOrdine() {
+        return dataOrdine;
     }
 
-    public void set_Data_ordine(Date _Data_ordine) {
-	this._Data_ordine = _Data_ordine;
+    public void setDataOrdine(Date dataOrdine) {
+        this.dataOrdine = dataOrdine;
     }
 
-    public int get_Id_utente() {
-	return _Id_utente;
+    public int getIdUtente() {
+        return idUtente;
     }
 
-    public void set_Id_utente(int _Id_utente) {
-	this._Id_utente = _Id_utente;
+    public void setIdUtente(int idUtente) {
+        this.idUtente = idUtente;
     }
 
-    public String get_Stato() {
-	return _Stato;
+    public String getStato() {
+        return stato;
     }
 
-    public void set_Stato(String _Stato) {
-	this._Stato = _Stato;
+    public void setStato(String stato) {
+        this.stato = stato;
     }
-
 }

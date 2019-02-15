@@ -13,9 +13,16 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 
     private String TABLE_NAME = "produttore";
 
-    @Override
-    public Produttore get(int id) throws SQLException {
-	return null;
+    public Produttore getByID(int id) throws SQLException {
+	Connection con = getConnection();
+	PreparedStatement ps = con.prepareStatement("select * from " + getTableName() + " WHERE id = ?");
+	ps.setInt(1, id);
+	ResultSet rs = ps.executeQuery();
+
+	Produttore produttore = fromResultSetToBean(rs);
+	con.close();
+
+	return produttore;
     }
 
     @Override
@@ -26,8 +33,7 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 	PreparedStatement ps = con.prepareStatement("select * from " + getTableName());
 	ResultSet rs = ps.executeQuery();
 	while (rs.next()) {
-	    Produttore produttore = new Produttore(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-		    rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9));
+	    Produttore produttore = fromResultSetToBean(rs);
 	    produttori.add(produttore);
 	}
 	con.close();
@@ -39,17 +45,16 @@ public class ProduttoreDao extends GenericDao<Produttore> {
     public void save(Produttore produttore) throws SQLException {
 	Connection con = getConnection();
 	PreparedStatement ps = con
-		.prepareStatement("insert into " + getTableAndColumns() + " values (?,?,?,?,?,?,?,?,?)");
+		.prepareStatement("insert into " + getTableAndColumns() + " values (?,?,?,?,?,?,?,?)");
 
-	ps.setInt(1, produttore.get_ID());
-	ps.setString(2, produttore.get_nome());
-	ps.setString(3, produttore.get_indirizzo());
-	ps.setString(4, produttore.get_citta());
-	ps.setString(5, produttore.get_cap());
-	ps.setString(6, produttore.get_telefono());
-	ps.setString(7, produttore.get_email());
-	ps.setString(8, produttore.get_descrizione());
-	ps.setString(9, produttore.get_partitaIVA());
+	ps.setString(1, produttore.getNome());
+	ps.setString(2, produttore.getIndirizzo());
+	ps.setString(3, produttore.getCitta());
+	ps.setString(4, produttore.getCap());
+	ps.setString(5, produttore.getTelefono());
+	ps.setString(6, produttore.getEmail());
+	ps.setString(7, produttore.getDescrizione());
+	ps.setString(8, produttore.getPartitaIVA());
 
 	int status = ps.executeUpdate();
 
@@ -59,10 +64,17 @@ public class ProduttoreDao extends GenericDao<Produttore> {
     @Override
     public void update(Produttore produttore) throws SQLException {
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("update" + getTableName() + "set " + "nome=" + produttore.get_nome()
-		+ "indirizzo=" + produttore.get_indirizzo() + "citta=" + produttore.get_citta() + "cap="
-		+ produttore.get_cap() + "telefono=" + produttore.get_telefono() + "email=" + produttore.get_email()
-		+ "descrizione=" + produttore.get_descrizione() + "partitaIVA=" + produttore.get_partitaIVA());
+	PreparedStatement ps = con.prepareStatement("update" + getTableName()
+		+ "set nome=?, indirizzo=?, citta=?, cap=?, telefono=?, email=?, descrizione=?, partitaIVA=? WHERE id=?");
+	ps.setString(1, produttore.getNome());
+	ps.setString(2, produttore.getIndirizzo());
+	ps.setString(3, produttore.getCitta());
+	ps.setString(4, produttore.getCap());
+	ps.setString(5, produttore.getTelefono());
+	ps.setString(6, produttore.getEmail());
+	ps.setString(7, produttore.getDescrizione());
+	ps.setString(8, produttore.getPartitaIVA());
+	ps.setInt(9, produttore.getId());
 
 	int status = ps.executeUpdate();
 
@@ -72,9 +84,9 @@ public class ProduttoreDao extends GenericDao<Produttore> {
     @Override
     public void delete(Produttore produttore) throws SQLException {
 	Connection con = getConnection();
-	PreparedStatement ps = con.prepareStatement("DELETE FROM" + getTableName() + "WHERE ID=" + produttore.get_ID());
-
-	int status = ps.executeUpdate();
+	PreparedStatement ps = con.prepareStatement("DELETE FROM" + getTableName() + "WHERE ID=?");
+	ps.setInt(1, produttore.getId());
+	ps.executeUpdate();
 
 	con.close();
     }
@@ -86,12 +98,13 @@ public class ProduttoreDao extends GenericDao<Produttore> {
 
     @Override
     public String getColumns() {
-	return "(ID, nome,indirizzo, citta, cap , telefono, email, descrizione, partitaIVA)";
+	return "(nome,indirizzo, citta, cap , telefono, email, descrizione, partitaIVA)";
     }
 
     @Override
-    public Produttore fromResultSetToBean(ResultSet t) throws SQLException {
-	// TODO Auto-generated method stub
-	return null;
+    public Produttore fromResultSetToBean(ResultSet rs) throws SQLException {
+	Produttore produttore = new Produttore(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
+		rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9));
+	return produttore;
     }
 }
