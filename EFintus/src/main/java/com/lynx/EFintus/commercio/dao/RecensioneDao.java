@@ -63,15 +63,16 @@ public class RecensioneDao extends GenericDao<Recensione> {
     @Override
     public void update(Recensione recensione) throws SQLException {
         Connection con = getConnection();
-        PreparedStatement ps = con
-                .prepareStatement("update" + getTableName() + "set " +
-                        "ID_utente="+recensione.getIdUtente()+
-                        "ID_prodotto="+recensione.getIdProdotto()+
-                        "ID_ordine="+recensione.getIdOrdine()+
-                        "descrizione="+recensione.getDescrizione()+
-                        "voto="+recensione.getVoto()+
-                        "data="+recensione.getData()
-                );
+
+        PreparedStatement ps = con.prepareStatement("update " + getTableName() + " set id_utente= ?, id_prodotto= ?, id_ordine= ?, descrizione= ?, voto= ?, data= ? WHERE id_utente= ? and id_prodotto = ?");
+        ps.setInt(1, recensione.getIdUtente());
+        ps.setInt(2, recensione.getIdProdotto());
+        ps.setInt(3, recensione.getIdOrdine());
+        ps.setString(4, recensione.getDescrizione());
+        ps.setInt(5, recensione.getVoto());
+        ps.setDate(6, recensione.getData());
+        ps.setInt(7, recensione.getIdUtente());
+        ps.setInt(8, recensione.getIdProdotto());
 
         int status = ps.executeUpdate();
 
@@ -81,8 +82,10 @@ public class RecensioneDao extends GenericDao<Recensione> {
     @Override
     public void delete(Recensione recensione) throws SQLException {
         Connection con = getConnection();
-        PreparedStatement ps = con
-                .prepareStatement("DELETE FROM" + getTableName()+"WHERE ID_utente="+recensione.getIdUtente()+"AND ID_prodotto="+recensione.getIdProdotto());
+
+        PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where id_utente= ? and id_prodotto = ?");
+        ps.setInt(1, recensione.getIdUtente());
+        ps.setInt(2, recensione.getIdProdotto());
 
         int status = ps.executeUpdate();
 
