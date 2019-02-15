@@ -11,7 +11,7 @@ import java.util.List;
 
 public class WishListDao extends GenericDao<WishList> {
 
-    private String TABLE_NAME = "wishList";
+    private String TABLE_NAME = "wishlist";
 
     public WishList getById(int id) throws SQLException {
         Connection con = getConnection();

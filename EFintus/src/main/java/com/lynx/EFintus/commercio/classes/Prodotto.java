@@ -1,6 +1,7 @@
 package com.lynx.EFintus.commercio.classes;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Prodotto {
 
@@ -15,9 +16,9 @@ public class Prodotto {
     private String colore;
     private String pathImmagini;
     private Date dataInizioValidita;
-    private Date dateFineValidita;
+    private Date dataFineValidita;
 
-    public Prodotto(int id, String nome, int idProduttore, float prezzo, int idCategorie, String descrizione, String misure, float peso, String colore, String pathImmagini, Date dataInizioValidita, Date dateFineValidita) {
+    public Prodotto(int id, String nome, int idProduttore, float prezzo, int idCategorie, String descrizione, String misure, float peso, String colore, String pathImmagini, Date dataInizioValidita, Date dataFineValidita) {
         this.id = id;
         this.nome = nome;
         this.idProduttore = idProduttore;
@@ -29,7 +30,7 @@ public class Prodotto {
         this.colore = colore;
         this.pathImmagini = pathImmagini;
         this.dataInizioValidita = dataInizioValidita;
-        this.dateFineValidita = dateFineValidita;
+        this.dataFineValidita = dataFineValidita;
     }
 
     public int getId() {
@@ -120,11 +121,11 @@ public class Prodotto {
         this.dataInizioValidita = dataInizioValidita;
     }
 
-    public Date getDateFineValidita() {
-        return dateFineValidita;
+    public Date getDataFineValidita() {
+        return dataFineValidita;
     }
 
-    public void setDateFineValidita(Date dateFineValidita) {
-        this.dateFineValidita = dateFineValidita;
+    public void setDataFineValidita(Date dateFineValidita) {
+        this.dataFineValidita = dateFineValidita;
     }
 }
