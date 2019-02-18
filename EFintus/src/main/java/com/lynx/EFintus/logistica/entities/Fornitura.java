@@ -1,21 +1,17 @@
 package com.lynx.EFintus.logistica.entities;
 
-import com.lynx.EFintus.logistica.entities.key.FornitoreProdottoKey;
-
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
 @Table(name = "fornitura")
-@AssociationOverrides({//to override the mappings for the prodotto and fornitore attributes of the composite key.
-        @AssociationOverride(name = "primaryKey.fornitore",
-                joinColumns = @JoinColumn(name = "id_fornitore")),
-        @AssociationOverride(name = "primaryKey.prodotto",
-                joinColumns = @JoinColumn(name = "id_prodotto"))})
+
 public class Fornitura {
 
-    @EmbeddedId //needed to embed a composite-id class as the primary key of this mapping.
-    private FornitoreProdottoKey primaryKey = new FornitoreProdottoKey();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_fornitura")
+    private int id;
 
     @Column(name = "quantita")
     private int quantita;
@@ -24,21 +20,22 @@ public class Fornitura {
     @Temporal(TemporalType.DATE)
     private Date date;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prodotto")
+    private Prodotto prodotto;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prodotto")
+    private Fornitore fornitore;
+
     public Fornitura(){ }
 
-    public Fornitura(FornitoreProdottoKey primaryKey, int quantita, Date date) {
-        this.primaryKey = primaryKey;
+    public Fornitura( int quantita, Date date) {
         this.quantita = quantita;
         this.date = date;
     }
 
-    public FornitoreProdottoKey getPrimaryKey() {
-        return primaryKey;
-    }
 
-    public void setPrimaryKey(FornitoreProdottoKey primaryKey) {
-        this.primaryKey = primaryKey;
-    }
 
     public int getQuantita() {
         return quantita;
@@ -56,21 +53,19 @@ public class Fornitura {
         this.date = date;
     }
 
-    @Transient// Hibernate doesn’t try to map these getters. These getters are provided for convenience in case we want to obtain a specific side of the relationship
-    public Prodotto getProdotto(){
-        return primaryKey.getProdotto();
+    public Prodotto getProdotto() {
+        return prodotto;
     }
 
-    public void setProdotto(Prodotto prodotto){
-        primaryKey.setProdotto(prodotto);
+    public void setProdotto(Prodotto prodotto) {
+        this.prodotto = prodotto;
     }
 
-    @Transient
-    public Fornitore getFornitore(){
-        return primaryKey.getFornitore();
+    public Fornitore getFornitore() {
+        return fornitore;
     }
 
-    public void setFornitore(Fornitore fornitore){
-        primaryKey.setFornitore(fornitore);
+    public void setFornitore(Fornitore fornitore) {
+        this.fornitore = fornitore;
     }
 }

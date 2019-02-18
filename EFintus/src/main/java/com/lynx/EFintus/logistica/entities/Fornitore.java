@@ -27,7 +27,7 @@ public class Fornitore {
     @Column(name = "cap", length = 6)
     private String cap;
 
-    @OneToMany(mappedBy = "primaryKey.fornitore", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fornitore", cascade = CascadeType.ALL)
     private List<Fornitura> forniture = new ArrayList<Fornitura>();
 
     public Fornitore(){}
@@ -59,5 +59,12 @@ public class Fornitore {
 
     public void addFornitura(Fornitura f){
         forniture.add(f);
+    }
+
+    @PreRemove
+    public void removeFromForniture(){
+        for (Fornitura fornitura: forniture) {
+            fornitura.setFornitore(null);
+        }
     }
 }
