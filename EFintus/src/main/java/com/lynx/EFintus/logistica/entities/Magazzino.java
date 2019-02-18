@@ -113,6 +113,22 @@ public class Magazzino {
         this.capacita = capacita;
     }
 
+    public List<Lavoratore> getLavoratori() {
+        return lavoratori;
+    }
+
+    public void setLavoratori(List<Lavoratore> lavoratori) {
+        this.lavoratori = lavoratori;
+    }
+
+    public List<Disponibilita> getDisponibilita() {
+        return disponibilita;
+    }
+
+    public void setDisponibilita(List<Disponibilita> disponibilita) {
+        this.disponibilita = disponibilita;
+    }
+
     @PreRemove
     private void removeForeignKey() {
         for (Lavoratore lavoratore : lavoratori) {

@@ -16,7 +16,7 @@ public interface ProdottoDao {
      * @param id_prodotto the product id that needs to be find
      * @return a list that contains hashMap key: Warehouse value:section of warehouse
      */
-    List<HashMap<Magazzino,String>> getProductLocation(int id_prodotto);
+    HashMap<Magazzino, Character> getProductLocation(int id_prodotto);
 
     int getProductAvailability(int id_prodotto);
 

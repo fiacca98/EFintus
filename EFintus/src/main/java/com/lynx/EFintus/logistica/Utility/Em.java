@@ -15,7 +15,9 @@ public class Em {
     }
 
 
-    public static void closeEntityManager(){
+
+    public static void closeEntityManager(EntityManager em){
+        em.close();
         entityManagerFactory.close();
     }
 
