@@ -1,8 +1,8 @@
 /target/
-.idea/
-EFintus/.settings/
-*.classpath
-*.project
+/.idea/
+/.settings/
+/.classpath
+/.project
 
 # Compiled source #
 ###################

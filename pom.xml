@@ -36,6 +36,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.6.3.Final</version>
+        </dependency>
+
     </dependencies>
-    
+    <packaging>war</packaging>
 </project>
