@@ -17,6 +17,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponentComponent } from './components/sidebar-component/sidebar-component.component';
 import { NgbRatingConfigComponentComponent } from './components/ngb-rating-config-component/ngb-rating-config-component.component';
 import { AlertComponentComponent } from './components/alert-component/alert-component.component';
+import { RecensioneComponentComponent } from './components/recensione-component/recensione-component.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AlertComponentComponent } from './components/alert-component/alert-comp
     ProdottoComponentComponent,
     SidebarComponentComponent,
     NgbRatingConfigComponentComponent,
-    AlertComponentComponent
+    AlertComponentComponent,
+    RecensioneComponentComponent
   ],
   imports: [
     BrowserModule,

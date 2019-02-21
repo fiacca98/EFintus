@@ -20,11 +20,12 @@ export class HttpServiceService {
       this.messageService.add(`HTTPSERVICE: ${message}`);
     }
   
+    private baseUrl = 'api/heroes';  // URL to web api
     private categoryUrl = 'api/CATEGORYDB';  // URL to web api
 
 
     getCategories (): Observable<CategoryBean[]> {
-     return this.httpClient.get<CategoryBean[]>("api/CATEGORYDB");
+     return this.httpClient.get<CategoryBean[]>("http://localhost:3000/posts/1");
     }
 
     postCategories(){
@@ -53,6 +54,5 @@ export class HttpServiceService {
         return of(result as T);
       };
     }
-
     
   }

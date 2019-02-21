@@ -15,7 +15,7 @@ export class NgbRatingConfigComponentComponent implements OnInit {
   constructor(config: NgbRatingConfig) {
     // customize default values of ratings used by this component tree
     config.max = 5;
-    config.readonly = this.inputReadonly;
+    config.readonly = true;
   
 }
   ngOnInit() {
