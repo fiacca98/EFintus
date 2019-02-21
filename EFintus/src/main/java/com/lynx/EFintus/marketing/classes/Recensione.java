@@ -1,7 +1,5 @@
 package com.lynx.EFintus.marketing.classes;
 
-import java.util.Date;
-
 public class Recensione {
 
     private int idRecensione;

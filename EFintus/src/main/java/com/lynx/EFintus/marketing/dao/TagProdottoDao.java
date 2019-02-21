@@ -11,7 +11,7 @@ package com.lynx.EFintus.marketing.dao;
 
   public class TagProdottoDao  extends GenericDao<TagProdotto> {
 
-      private String TABLE_NAME = "tag-prodotto";
+      private String TABLE_NAME = "tag_prodotto";
 
       public TagProdotto getByName(String name) throws SQLException {
     Connection con = getConnection();
@@ -43,7 +43,7 @@ package com.lynx.EFintus.marketing.dao;
     Connection con = getConnection();
     PreparedStatement ps = con.prepareStatement("insert into " + getTableAndColumns() + " values (?),(?)");
 
-    ps.setInt(1, tagProdotto.getIdTag());
+    ps.setInt(1, tagProdotto.getNome());
     ps.setInt(2, tagProdotto.getIdProdotto());
 
     ps.executeUpdate();
@@ -62,8 +62,8 @@ package com.lynx.EFintus.marketing.dao;
       @Override
       public void delete(TagProdotto tagProdotto) throws SQLException {
     Connection con = getConnection();
-    PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where idTag = ? AND idProdotto = ?");
-    ps.setInt(1, tagProdotto.getIdTag());
+    PreparedStatement ps = con.prepareStatement("delete from " + getTableName() + " where nome = ? AND idProdotto = ?");
+    ps.setInt(1, tagProdotto.getNome());
     ps.setInt(1, tagProdotto.getIdProdotto());
     ps.executeUpdate();
     con.close();
@@ -82,7 +82,7 @@ package com.lynx.EFintus.marketing.dao;
 
       @Override
       public String getColumns() {
-    return ("idTag,idProdotto");
+    return ("nome,idProdotto");
       }
 
   }
