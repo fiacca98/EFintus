@@ -3,6 +3,8 @@ import { MessageService } from './../message-service/message.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { RecensioneBean } from 'src/app/bean/recensioneBean';
+import { UtenteBean } from 'src/app/bean/utenteBean';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +22,19 @@ export class HttpServiceService {
       this.messageService.add(`HTTPSERVICE: ${message}`);
     }
   
-    private baseUrl = 'api/heroes';  // URL to web api
-    private categoryUrl = 'api/CATEGORYDB';  // URL to web api
-
-
-    getCategories (): Observable<CategoryBean[]> {
-     return this.httpClient.get<CategoryBean[]>("http://localhost:3000/posts/1");
+      //HTTP GET
+    getCategorie (): Observable<CategoryBean[]> {
+     return this.httpClient.get<CategoryBean[]>('http://localhost:3000/categoria');
     }
 
+    getRecensioni (): Observable<RecensioneBean[]> {
+      return this.httpClient.get<RecensioneBean[]>('http://localhost:3000/recensione');
+     }
+ 
+     getUtenti (): Observable<UtenteBean[]> {
+      return this.httpClient.get<UtenteBean[]>('http://localhost:3000/utente');
+     }
+ 
     postCategories(){
       this.httpClient.post("http://127.0.0.1:3000/customers",
       {"name":  "Customer004",

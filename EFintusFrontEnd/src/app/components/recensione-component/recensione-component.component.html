@@ -1,6 +1,16 @@
-<p>
-    recensione-component works!
-</p>
-<p>
-    {{categories}}
-</p>
+<hr>
+<br><br><br>
+<h1> RECENSIONI</h1>
+<div class="col-md-6" style="margin-left:10%">
+    <ul class="list-group" *ngFor="let recensione of recensioni">
+        <div *ngFor="let utente of utenti">
+            <li class="list-group-item" *ngIf="utente.id==recensione.idUtente"> {{utente.nome}} {{ utente.cognome}} </li>
+        </div>
+        <li class="list-group-item"><b>Descrizione: </b>{{recensione.descrizione}}</li>
+        <li class="list-group-item">
+            <app-ngb-rating-config-component [inputReadonly]="recensioneMOdificabile" [inputRating]="recensione.voto"></app-ngb-rating-config-component>
+        </li>
+        <li class="list-group-item"><b>Ordinato in data: </b>{{recensione.data}}</li>
+        <br><br>
+    </ul>
+</div>

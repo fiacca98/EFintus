@@ -1,7 +1,10 @@
+import { UtenteBean } from 'src/app/bean/utenteBean';
 import { CategoryBean } from 'src/app/bean/CategoryBean';
 import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RecensioneBean } from 'src/app/bean/recensioneBean';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'recensione-component',
@@ -10,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecensioneComponentComponent implements OnInit {
 
-categories: CategoryBean[];
+recensioni: RecensioneBean[];
+utenti: UtenteBean[];
+  nomeUtente: any;
 
   constructor(
     private httpClient: HttpClient,
@@ -18,13 +23,18 @@ categories: CategoryBean[];
   ) { }
 
   ngOnInit() {
-    this.getHeroes()
+    this.getRecensioni();
   }
 
+  getRecensioni(): void {
+    this.httpService.getRecensioni()
+    .subscribe(recensioni => this.recensioni = recensioni);
+    this.getUtenti();
+  }
 
-  getHeroes(): void {
-    this.httpService.getCategories()
-    .subscribe(categories => this.categories = categories);
+  getUtenti():void {
+    this.httpService.getUtenti()
+    .subscribe(utenti =>this.utenti = utenti);
   }
 
 }

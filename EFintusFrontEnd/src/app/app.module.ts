@@ -12,7 +12,6 @@ import { ListaProdottiComponentComponent } from './components/lista-prodotti-com
 import { ProdottoComponentComponent } from './components/prodotto-component/prodotto-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data-service/in-memory-data.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponentComponent } from './components/sidebar-component/sidebar-component.component';
 import { NgbRatingConfigComponentComponent } from './components/ngb-rating-config-component/ngb-rating-config-component.component';
@@ -40,9 +39,6 @@ import { RecensioneComponentComponent } from './components/recensione-component/
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]
