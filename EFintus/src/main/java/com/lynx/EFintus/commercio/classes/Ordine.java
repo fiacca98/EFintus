@@ -8,43 +8,64 @@ public class Ordine {
     private Date dataOrdine;
     private int idUtente;
     private String stato;
+    private int idCorriere;
+    private int idTrasporto;
 
-    public Ordine(int id, Date dataOrdine, int idUtente, String stato) {
-        this.id = id;
-        this.dataOrdine = dataOrdine;
-        this.idUtente = idUtente;
-        this.stato = stato;
+    public Ordine(int id, Date dataOrdine, int idUtente, String stato, int idCorriere, int idTrasporto) {
+	this.id = id;
+	this.dataOrdine = dataOrdine;
+	this.idUtente = idUtente;
+	this.stato = stato;
+	this.idCorriere = idCorriere;
+	this.idTrasporto = idTrasporto;
     }
 
     public int getId() {
-        return id;
+	return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+	this.id = id;
     }
 
     public Date getDataOrdine() {
-        return dataOrdine;
+	return dataOrdine;
     }
 
     public void setDataOrdine(Date dataOrdine) {
-        this.dataOrdine = dataOrdine;
+	this.dataOrdine = dataOrdine;
     }
 
     public int getIdUtente() {
-        return idUtente;
+	return idUtente;
     }
 
     public void setIdUtente(int idUtente) {
-        this.idUtente = idUtente;
+	this.idUtente = idUtente;
     }
 
     public String getStato() {
-        return stato;
+	return stato;
     }
 
     public void setStato(String stato) {
-        this.stato = stato;
+	this.stato = stato;
     }
+
+    public int getIdCorriere() {
+	return idCorriere;
+    }
+
+    public void setIdCorriere(int idCorriere) {
+	this.idCorriere = idCorriere;
+    }
+
+    public int getIdTrasporto() {
+	return idTrasporto;
+    }
+
+    public void setIdTrasporto(int idTrasporto) {
+	this.idTrasporto = idTrasporto;
+    }
+
 }
