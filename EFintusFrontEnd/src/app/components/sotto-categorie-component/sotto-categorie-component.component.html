@@ -1,0 +1,19 @@
+<h2>{{parentCategory.nome | uppercase}}</h2>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="container " style="text-align: center; padding: 100px; margin-top: 30px; ">
+                <h1>{{titoloOffertaCategoria}}
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style=" margin-top: 50px;">
+    <div (click)="goToProductList(category.id)" class="col offset-xs-1" *ngFor="let category of categories">
+        <div class="container littleBox" style="text-align: center; padding-top: 50px;">{{category.nome}}
+        </div>
+    </div>
+</div>

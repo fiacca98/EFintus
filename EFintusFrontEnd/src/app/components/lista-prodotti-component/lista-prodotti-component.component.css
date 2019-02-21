@@ -1,0 +1,15 @@
+.container {
+    background-color: lightgreen;
+}
+
+.littleBox {
+    background-color: lightskyblue;
+    position: relative;
+    width: 80%;
+    padding-top: 75%;
+    margin: 10%;
+}
+
+.tac {
+    text-align: center;
+}

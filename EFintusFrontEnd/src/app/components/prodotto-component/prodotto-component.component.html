@@ -1,0 +1,28 @@
+<div id="product-section">
+    <div class="row">
+        <div class="col-md-6 tac">
+            <img src="https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg" alt="Kodak Brownie Flash B Camera" class="image-responsive" />
+        </div>
+        <div class="col-md-3 tac">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{nomeProdotto}}</h1>
+                    <p>Produttore: {{produttore.nome}}</p>
+                    <p>Voto:</p>
+                    <app-ngb-rating-config-component [inputReadonly]="recensioneMOdificabile" [inputRating]="recensione.voto"></app-ngb-rating-config-component>
+
+
+                    <p>{{prezzoProdotto}} €</p>
+                    <P>{{coloreProdotto}}</P>
+                    <P>{{descrizioneProdotto}}</P>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-sidebar-component></app-sidebar-component>
+        </div>
+
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+    <recensione-component></recensione-component>

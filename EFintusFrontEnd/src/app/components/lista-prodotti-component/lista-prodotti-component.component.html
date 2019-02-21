@@ -1,0 +1,8 @@
+<div class="row">
+    <div *ngFor="let product of products" class="col-3 tac" (click)="goToProduct(product.IdCategoria)">
+        <div class="littleBox">
+            <p>{{product.nome}}</p>
+            <p>{{product.prezzo}}</p>
+        </div>
+    </div>
+</div>
