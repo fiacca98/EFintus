@@ -1,3 +1,4 @@
+import { ProdottoBean } from 'src/app/bean/prodottoBean';
 import { CategoryBean } from './../../bean/categoryBean';
 import { MessageService } from './../message-service/message.service';
 import { Injectable } from '@angular/core';
@@ -5,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { RecensioneBean } from 'src/app/bean/recensioneBean';
 import { UtenteBean } from 'src/app/bean/utenteBean';
+import _ from 'underscore'
+import { ProduttoreBean } from 'src/app/bean/produttoreBean';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +27,7 @@ export class HttpServiceService {
   
       //HTTP GET
     getCategorie (): Observable<CategoryBean[]> {
-     return this.httpClient.get<CategoryBean[]>('http://localhost:3000/categoria');
+     return this.httpClient.get<CategoryBean[]>("http://localhost:3000/categoria");
     }
 
     getRecensioni (): Observable<RecensioneBean[]> {
@@ -34,7 +37,20 @@ export class HttpServiceService {
      getUtenti (): Observable<UtenteBean[]> {
       return this.httpClient.get<UtenteBean[]>('http://localhost:3000/utente');
      }
- 
+
+     getListaProdotti():  Observable<ProdottoBean[]> {
+      return this.httpClient.get<ProdottoBean[]>('http://localhost:3000/prodotto');
+     }
+
+     getProdotto(id: number):  Observable<ProdottoBean> {
+      return this.httpClient.get<ProdottoBean>('http://localhost:3000/prodotto/'+ id);
+     }
+
+     getProduttore(id: number): Observable<ProduttoreBean>{
+      return this.httpClient.get<ProduttoreBean>('http://localhost:3000/produttore/'+ id);
+     }
+     
+     //HTTP POST
     postCategories(){
       this.httpClient.post("http://127.0.0.1:3000/customers",
       {"name":  "Customer004",

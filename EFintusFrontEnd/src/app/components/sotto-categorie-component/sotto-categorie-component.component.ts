@@ -1,7 +1,9 @@
+import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { CategoryBean } from 'src/app/bean/CategoryBean';
 import { CategorieServiceService } from './../../services/categorie-service/categorie-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterEvent, Router } from '@angular/router';
+import _ from 'underscore'
 
 @Component({
   selector: 'app-sotto-categorie-component',
@@ -10,12 +12,12 @@ import { ActivatedRoute, RouterEvent, Router } from '@angular/router';
 })
 export class SottoCategorieComponentComponent implements OnInit {
 
-   parentCategory: CategoryBean;
    categories: CategoryBean[] = [];
-   titoloOffertaCategoria: string;
-   
+   titoloOffertaCategoria: string = "titoloOffertaCategoria (TODO MARKETING ? )"  ;
+   parentCategory: string;
+
   constructor(  
-    
+    private httpService: HttpServiceService,
     private route: ActivatedRoute,
     private router: Router,
     private categoryService: CategorieServiceService,
@@ -24,28 +26,22 @@ export class SottoCategorieComponentComponent implements OnInit {
      }
 
   ngOnInit() {
-    this.getCategory()
-    this.getCategories()
-
+    this.getCategories();
+    this.parentCategory =  sessionStorage.getItem("parentCategory");
 }
 
-getCategory(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.categoryService.getCategory(id)
-      .subscribe(category => this.parentCategory = category);
-      this.titoloOffertaCategoria = this.parentCategory.nome
-  }
 
   getCategories(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.categoryService.getCategoriesFromParentId(id)
-      .subscribe(categories => this.categories = categories);
-      console.log(this.categories)
+    this.httpService.getCategorie()
+      .subscribe(categories => {this.categories = categories;   
+        this.categories = _.filter(this.categories,function(num){ return num.parentId == id; } );
+    });
   }
-
 
   goToProductList(id: number){
     this.router.navigate(["/listaProdotti/" + id]);
   }
+
 
 }

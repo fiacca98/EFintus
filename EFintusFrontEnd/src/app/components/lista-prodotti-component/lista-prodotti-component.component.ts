@@ -1,7 +1,9 @@
+import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { ProdottoBean } from "./../../bean/prodottoBean";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CategorieServiceService } from "src/app/services/categorie-service/categorie-service.service";
+import _ from 'underscore'
 
 @Component({
   selector: "app-lista-prodotti-component",
@@ -14,21 +16,22 @@ export class ListaProdottiComponentComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private categoryService: CategorieServiceService
+    private httpService: HttpServiceService
   ) {}
 
   ngOnInit() {
     this.getProductList();
   }
 
+
   getProductList() {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.categoryService
-      .getProductsFromCategory(id)
-      .subscribe(products => (this.products = products));
-      console.log(this.products)
-
+    this.httpService.getListaProdotti()
+      .subscribe(products => {(this.products = products);
+        this.products = _.filter(this.products,function(num){ return num.IdCategoria == id; } )
+      });
   }
+
 
   goToProduct(id: number) {
     this.router.navigate(["/prodotto/" + id]);

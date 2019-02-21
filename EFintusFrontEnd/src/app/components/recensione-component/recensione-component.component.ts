@@ -1,7 +1,6 @@
 import { UtenteBean } from 'src/app/bean/utenteBean';
 import { CategoryBean } from 'src/app/bean/CategoryBean';
 import { HttpServiceService } from './../../services/http-service/http-service.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RecensioneBean } from 'src/app/bean/recensioneBean';
 import { Observable } from 'rxjs';
@@ -18,7 +17,6 @@ utenti: UtenteBean[];
   nomeUtente: any;
 
   constructor(
-    private httpClient: HttpClient,
     private httpService: HttpServiceService
   ) { }
 
