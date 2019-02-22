@@ -1,3 +1,4 @@
+import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit, Input } from "@angular/core";
 import { ProdottoBean } from "src/app/bean/prodottoBean";
@@ -13,8 +14,8 @@ export class SidebarComponentComponent implements OnInit {
   isCartAlertOpen: boolean = false;
   isWishlistAlertOpen: boolean = false;
   constructor(
-    private categoryService: CategorieServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private httpService: HttpServiceService
   ) {}
 
   ngOnInit() {
@@ -23,8 +24,7 @@ export class SidebarComponentComponent implements OnInit {
 
   getProdotto(): void {
     const id = +this.route.snapshot.paramMap.get("id");
-    this.categoryService
-      .getProduct(id)
+    this.httpService.getProdotto(id)
       .subscribe(prodotto => (this.prodotto = prodotto));
   }
 

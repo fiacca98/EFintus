@@ -20,7 +20,6 @@ export class SottoCategorieComponentComponent implements OnInit {
     private httpService: HttpServiceService,
     private route: ActivatedRoute,
     private router: Router,
-    private categoryService: CategorieServiceService,
 ) {
 
      }
@@ -28,6 +27,7 @@ export class SottoCategorieComponentComponent implements OnInit {
   ngOnInit() {
     this.getCategories();
     this.parentCategory =  sessionStorage.getItem("parentCategory");
+    sessionStorage.removeItem("parentCategory");
 }
 
 

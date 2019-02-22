@@ -17,6 +17,7 @@ import { SidebarComponentComponent } from './components/sidebar-component/sideba
 import { NgbRatingConfigComponentComponent } from './components/ngb-rating-config-component/ngb-rating-config-component.component';
 import { AlertComponentComponent } from './components/alert-component/alert-component.component';
 import { RecensioneComponentComponent } from './components/recensione-component/recensione-component.component';
+import { CarrelloComponentComponent } from './components/carrello-component/carrello-component.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RecensioneComponentComponent } from './components/recensione-component/
     SidebarComponentComponent,
     NgbRatingConfigComponentComponent,
     AlertComponentComponent,
-    RecensioneComponentComponent
+    RecensioneComponentComponent,
+    CarrelloComponentComponent
   ],
   imports: [
     BrowserModule,

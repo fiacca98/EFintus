@@ -4,6 +4,7 @@ import { HttpServiceService } from './../../services/http-service/http-service.s
 import { Component, OnInit } from '@angular/core';
 import { RecensioneBean } from 'src/app/bean/recensioneBean';
 import { Observable } from 'rxjs';
+import _ from 'underscore'
 
 @Component({
   selector: 'recensione-component',
@@ -22,12 +23,18 @@ utenti: UtenteBean[];
 
   ngOnInit() {
     this.getRecensioni();
+    this.getUtenti()
   }
 
   getRecensioni(): void {
-    this.httpService.getRecensioni()
-    .subscribe(recensioni => this.recensioni = recensioni);
-    this.getUtenti();
+    const id = sessionStorage.getItem("idProdotto") //this.prodotto.id;
+    sessionStorage.removeItem("idProdotto");
+    this.httpService.getRecensioni().subscribe(recensione => {
+      this.recensioni = recensione;
+      this.recensioni = _.filter(this.recensioni, function(num) {
+        return num.idProdotto == id;
+      });
+    });
   }
 
   getUtenti():void {
