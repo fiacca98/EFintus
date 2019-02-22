@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
+import { OrdersComponent } from '../components/orders/orders.component';
+import { MagazziniComponent } from '../components/magazzini/magazzini.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' }
+  {path:'ordini',component:OrdersComponent},
+  {path: 'magazzini',component:MagazziniComponent}
 ];
-
 @NgModule({
   declarations: [],
   imports: [
@@ -18,3 +20,4 @@ const routes: Routes = [
   ]
 })
 export class AppRoutingModule { }
+export const routingComponents=[OrdersComponent,MagazziniComponent]

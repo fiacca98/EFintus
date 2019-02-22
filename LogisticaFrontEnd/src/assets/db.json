@@ -18,7 +18,48 @@
 
   "warehouses":[
       {
-                    
+        "id_magazzino":2524,
+        "nome": "Mobili",
+        "via": "Prati chiari",
+        "n_civico": 15,
+        "citta": "Milano",
+        "cap": "20121",
+        "metratura": 150,
+        "altezza": 5,
+        "capacita": 600
+      },
+      {
+        "id_magazzino":2524,
+        "nome": "Stufe",
+        "via": "Prati chiari",
+        "n_civico": 16,
+        "citta": "Milano",
+        "cap": "20121",
+        "metratura": 150,
+        "altezza": 5,
+        "capacita": 600
+      },
+      {
+        "id_magazzino":2524,
+        "nome": "Pentole",
+        "via": "Prati chiari",
+        "n_civico": 17,
+        "citta": "Milano",
+        "cap": "20121",
+        "metratura": 150,
+        "altezza": 5,
+        "capacita": 600
+      },
+      {
+        "id_magazzino":2524,
+        "nome": "Computer",
+        "via": "Prati chiari",
+        "n_civico": 18,
+        "citta": "Milano",
+        "cap": "20121",
+        "metratura": 150,
+        "altezza": 5,
+        "capacita": 600
       }
     ]
 }
