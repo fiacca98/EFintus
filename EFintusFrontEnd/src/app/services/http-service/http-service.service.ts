@@ -1,3 +1,4 @@
+import { AlertService } from './../../_services/alert.service';
 import { ProdottoBean } from 'src/app/bean/prodottoBean';
 import { CategoryBean } from './../../bean/categoryBean';
 import { MessageService } from './../message-service/message.service';
@@ -8,6 +9,8 @@ import { RecensioneBean } from 'src/app/bean/recensioneBean';
 import { UtenteBean } from 'src/app/bean/utenteBean';
 import _ from 'underscore'
 import { ProduttoreBean } from 'src/app/bean/produttoreBean';
+import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +22,12 @@ export class HttpServiceService {
 
   constructor(
     private httpClient: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private alertService: AlertService,
+    private router: Router,
+    private route: ActivatedRoute,
+
+  ) { }
 
     private log(message: string) {
       this.messageService.add(`HTTPSERVICE: ${message}`);
@@ -50,9 +58,13 @@ export class HttpServiceService {
       return this.httpClient.get<ProduttoreBean>('http://localhost:3000/produttore/'+ id);
      }
      
+     getUtente (id: number): Observable<UtenteBean> {
+      return this.httpClient.get<UtenteBean>('http://localhost:3000/utente/' + id);
+     }
+
      //HTTP POST
     postCategories(){
-      this.httpClient.post("http://127.0.0.1:3000/customers",
+      this.httpClient.post("http://localhost:3000/customers",
       {"name":  "Customer004",
       "email":  "customer004@email.com",
       "tel":  "0000252525"
@@ -66,6 +78,35 @@ export class HttpServiceService {
       })
     }
 
+
+    register(user: any){
+      this.httpClient.post("http://localhost:3000/utente",
+      user)
+      .pipe(first())
+      .subscribe(
+          data => {
+              this.alertService.success('Registration successful', true);
+              this.router.navigate(['/login']);
+          },
+          error => {
+              this.alertService.error(error);
+          });
+        }
+
+
+        login(email: string, password: string){
+          this.httpClient.post("http://localhost:3000/utente",
+          { email: email, password: password })
+          .pipe(first())
+          .subscribe(
+              data => {
+                this.router.navigate([this.route.snapshot.queryParams['returnUrl'] || '/']);
+                  this.alertService.success('Login successful', true);
+              },
+              error => {
+                  this.alertService.error(error);
+              });
+            }
 
    handleError<T> (operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {

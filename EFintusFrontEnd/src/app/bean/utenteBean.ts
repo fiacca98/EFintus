@@ -11,3 +11,5 @@ export class UtenteBean {
   telefono: string;
   partitaIva: string;
 }
+
+

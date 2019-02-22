@@ -1,4 +1,6 @@
+import { UtenteBean } from 'src/app/bean/utenteBean';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-component',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponentComponent implements OnInit {
 
-  constructor() { }
+  currentUser: UtenteBean;
+  constructor(  private router: Router
+    ) { }
 
   ngOnInit() {
   }
 
+
+  goToUtente() {
+    if ( this.currentUser != undefined){
+      this.router.navigate(["/utente/" + this.currentUser.id]);
+    } else  this.router.navigate(["login"]);
+
+  }
 }
+

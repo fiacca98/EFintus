@@ -1,3 +1,4 @@
+import { UtenteBean } from './../../bean/utenteBean';
 import { HttpServiceService } from './../../services/http-service/http-service.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponentComponent implements OnInit {
 
-  constructor(
-    private httpService: HttpServiceService
-  ) { }
+  currentUser: UtenteBean;
+  users: UtenteBean[] = [];
+
+  constructor() {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
-
   }
 }
