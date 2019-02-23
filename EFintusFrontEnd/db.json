@@ -498,6 +498,26 @@
       "username": "pino",
       "password": "pinopini",
       "id": 20
+    },
+    {
+      "firstName": "pino",
+      "lastName": "pini",
+      "username": "pino123",
+      "password": "pinopini",
+      "id": 21
+    },
+    {
+      "nome": "Raffaello",
+      "cognome": "Primiceri",
+      "email": "raffaello@primiceri.eu",
+      "password": "qwerty",
+      "indirizzo": "Viale Romagna 12",
+      "citta": "milano",
+      "cap": "20133",
+      "stato": "italia",
+      "telefono": "3471784655",
+      "partitaIva": "",
+      "id": 22
     }
   ],
   "prodotto": [

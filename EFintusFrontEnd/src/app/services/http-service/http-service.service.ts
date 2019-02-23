@@ -63,23 +63,8 @@ export class HttpServiceService {
      }
 
      //HTTP POST
-    postCategories(){
-      this.httpClient.post("http://localhost:3000/customers",
-      {"name":  "Customer004",
-      "email":  "customer004@email.com",
-      "tel":  "0000252525"
-      })
-      .subscribe(
-      data  => {
-      console.log("POST Request is successful ", data);
-      },
-      error  => {
-      console.log("Error", error);
-      })
-    }
 
-
-    register(user: any){
+    register(user: UtenteBean){
       this.httpClient.post("http://localhost:3000/utente",
       user)
       .pipe(first())
@@ -93,6 +78,34 @@ export class HttpServiceService {
           });
         }
 
+        modificaUtente(user: UtenteBean){
+          this.httpClient.post("http://localhost:3000/utente",
+          user)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.alertService.success('Registration successful', true);
+                  this.router.navigate(['/login']);
+              },
+              error => {
+                  this.alertService.error(error);
+              });
+            }
+    
+            
+        modificaPagamento(any: any){
+          this.httpClient.post("http://localhost:3000/utente",
+          any)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.alertService.success('Registration successful', true);
+                  this.router.navigate(['/login']);
+              },
+              error => {
+                  this.alertService.error(error);
+              });
+            }
 
         login(email: string, password: string){
           this.httpClient.post("http://localhost:3000/utente",

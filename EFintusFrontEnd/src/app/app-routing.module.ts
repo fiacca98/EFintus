@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'sottocategorie/:id', component: SottoCategorieComponentComponent },
   { path: 'listaProdotti/:id', component: ListaProdottiComponentComponent },
   { path: 'prodotto/:id', component: ProdottoComponentComponent },
-  { path: 'utente/:id', component: UtenteComponentComponent, canActivate: [AuthGuard]},
+  { path: 'utente/:id', component: UtenteComponentComponent}, //TEMP, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

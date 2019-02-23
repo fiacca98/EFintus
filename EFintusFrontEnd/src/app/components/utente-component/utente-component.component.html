@@ -1,4 +1,115 @@
-<p>
-    utente-component works!
-</p>
-<button (click)="logout()">LOGOUT</button>
+<br><br>
+<div *ngIf="utente!=undefined" class="row">
+    <div class="container col-md-3">
+        <img src="https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_960_720.jpg">
+        <hr>
+        <button (click)="logout()">LOGOUT</button>
+        <br><br><br><br><br>
+        <h1>Metodo pagamento </h1>
+        <form [formGroup]="paymentMethodForm" (ngSubmit)="onSubmitMoficaPagamento()">
+            <div class="form-group">
+                <label for="tipologia">tipologia</label>
+                <input placeholder="{{utente.tipologia}}" type="text" formControlName="tipologia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tipologia.errors }" />
+                <div *ngIf="submitted && f.tipologia.errors" class="invalid-feedback">
+                    <div *ngIf="f.tipologia.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numero">numero</label>
+                <input placeholder="{{utente.numero}}" type="text" formControlName="numero" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numero.errors }" />
+                <div *ngIf="submitted && f.numero.errors" class="invalid-feedback">
+                    <div *ngIf="f.numero.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Modifica</button>
+                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                />
+                <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="container col-md-6">
+        <h2>INFORMAZIONI UTENTE</h2>
+        <form [formGroup]="modifyForm" (ngSubmit)="onSubmitMoficaUtente()">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input placeholder="{{utente.nome}}" type="text" formControlName="nome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nome.errors }" />
+                <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+                    <div *ngIf="f.nome.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input placeholder="{{utente.cognome}}" type="text" formControlName="cognome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cognome.errors }" />
+                <div *ngIf="submitted && f.cognome.errors" class="invalid-feedback">
+                    <div *ngIf="f.cognome.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="{{utente.email}}" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">email is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input placeholder="{{utente.password}}" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="indirizzo">Indirizzo</label>
+                <input placeholder="{{utente.indirizzo}}" type="text" formControlName="indirizzo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.indirizzo.errors }" />
+                <div *ngIf="submitted && f.indirizzo.errors" class="invalid-feedback">
+                    <div *ngIf="f.indirizzo.errors.required">indirizzo is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="citta">Citta</label>
+                <input placeholder="{{utente.citta}}" type="text" formControlName="citta" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.citta.errors }" />
+                <div *ngIf="submitted && f.citta.errors" class="invalid-feedback">
+                    <div *ngIf="f.citta.errors.required">citta is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cap">cap</label>
+                <input placeholder="{{utente.cap}}" type="text" formControlName="cap" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cap.errors }" />
+                <div *ngIf="submitted && f.cap.errors" class="invalid-feedback">
+                    <div *ngIf="f.cap.errors.required">cap is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="stato">stato</label>
+                <input placeholder="{{utente.stato}}" type="text" formControlName="stato" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stato.errors }" />
+                <div *ngIf="submitted && f.stato.errors" class="invalid-feedback">
+                    <div *ngIf="f.stato.errors.required">stato is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono">telefono</label>
+                <input placeholder="{{utente.telefono}}" type="text" formControlName="telefono" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+                <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                    <div *ngIf="f.telefono.errors.required">telefono is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="partitaIva">partitaIva</label>
+                <input placeholder="{{utente.partitaIva}}" type="text" formControlName="partitaIva" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.partitaIva.errors }" />
+                <div *ngIf="submitted && f.partitaIva.errors" class="invalid-feedback">
+                    <div *ngIf="f.partitaIva.errors.required">partitaIva is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Modifica</button>
+                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                />
+                <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
