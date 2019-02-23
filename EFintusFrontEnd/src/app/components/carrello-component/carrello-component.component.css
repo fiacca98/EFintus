@@ -19,3 +19,7 @@
 .row {
     margin: 2%
 }
+
+.glyphicon-trash:before {
+    content: "\e020"
+}

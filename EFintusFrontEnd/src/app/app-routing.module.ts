@@ -11,14 +11,16 @@ import { UtenteComponentComponent } from './components/utente-component/utente-c
 import { AuthGuard } from './_guards';
 import { RegisterComponent } from './register';
 import { CarrelloComponentComponent } from './components/carrello-component/carrello-component.component';
+import { AcquistoComponentComponent } from './components/acquisto-component/acquisto-component.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponentComponent },
   { path: 'categorie', component: CategorieComponentComponent },
   { path: 'sottocategorie/:id', component: SottoCategorieComponentComponent },
   { path: 'listaProdotti/:id', component: ListaProdottiComponentComponent },
-  { path: 'prodotto/:id', component: ProdottoComponentComponent },
-  { path: 'carrello', component: CarrelloComponentComponent },
+  { path: 'prodotto/:id', component: ProdottoComponentComponent }, 
+  { path: 'carrello', component: CarrelloComponentComponent }, //TEMP, canActivate: [AuthGuard]},
+  { path: 'acquisto', component: AcquistoComponentComponent },//TEMP, canActivate: [AuthGuard]},
   { path: 'utente/:id', component: UtenteComponentComponent}, //TEMP, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

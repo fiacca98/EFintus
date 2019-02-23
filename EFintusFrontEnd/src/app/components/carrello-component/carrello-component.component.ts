@@ -16,16 +16,23 @@ export class CarrelloComponentComponent implements OnInit {
   quantità: {};
   arrayIsSetted: boolean = false;
 
-  constructor(router: Router) {
+  constructor(
+    router: Router,
+    private Arouter: Router,
+
+  ) {
     router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        sessionStorage.setItem("arrayProdottiFiltrato", JSON.stringify(this.arrayProdottiFiltrato));
+        if (this.arrayProdottiFiltrato.length >= 1) {
+          sessionStorage.setItem("arrayProdottiFiltrato", JSON.stringify(this.arrayProdottiFiltrato));
+        }
         console.log(this.arrayProdottiFiltrato);
       }
     });
   }
 
   ngOnInit() {
+    console.log(this.arrayProdottiComprati)
     this.filtraArray()
     this.addQuantità()
 
@@ -34,6 +41,9 @@ export class CarrelloComponentComponent implements OnInit {
   calcoloTotale() {
     this.prezzoTotale = 0;
     this.arrayProdottiFiltrato.forEach(element => {
+      if (element.quantita != undefined && element.quantita == 0 || element.quantita == "0"){
+        this.arrayProdottiFiltrato =  this.arrayProdottiFiltrato.filter(obj => obj !== element);      
+      }
       this.prezzoTotale = this.prezzoTotale + (element.prezzo * JSON.parse(element.quantita));
     });
   }
@@ -49,6 +59,7 @@ export class CarrelloComponentComponent implements OnInit {
   filtraArray(): boolean {
     if (sessionStorage.getItem("arrayProdottiFiltrato")) {
       this.arrayProdottiFiltrato = JSON.parse(sessionStorage.getItem("arrayProdottiFiltrato"));
+      sessionStorage.removeItem("arrayProdottiFiltrato");
       return this.arrayIsSetted = false;
     } else {
       this.arrayProdottiFiltrato = (this.arrayProdottiComprati.filter((thing, index, self) => index === self.findIndex((t) => (t.id === thing.id))));
@@ -75,8 +86,11 @@ export class CarrelloComponentComponent implements OnInit {
   }
 
   compra() {
-    //TODO
+    this.Arouter.navigate(["/acquisto"]);
   }
 
-
+  rimuovi(product: ProdottoBean){
+    product.quantita = 0;
+    this.calcoloTotale();
+  }
 }

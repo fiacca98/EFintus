@@ -1,4 +1,8 @@
-<div class="row" style="margin-bottom:-7%;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<div class="row" style="margin-bottom:-5%;">
     <div class="littlebox col-2">
         <h1>CARRELLO</h1>
     </div>
@@ -15,7 +19,7 @@
     </div>
     <div class="col-2" style="background-color: lightgreen; text-align: center">
         <br><br><button (click)="compra()">ACQUISTA ORA</button><br><br>
-        <p><b>TOTALE: {{prezzoTotale}}</b></p>
+        <p><b>TOTALE: {{prezzoTotale}}€</b></p>
     </div>
 </div>
 <div *ngFor="let product of arrayProdottiFiltrato">
@@ -31,7 +35,12 @@
             <p>{{product.prezzo}}€ x {{product.quantita}}</p>
         </div>
         <div class="col-2" style="margin-left: 5%">
-            <input type="text" [(ngModel)]="product.quantita" (change)="calcoloTotale()" />
+            <div class="row">
+                <button type="button" class="btn btn-default btn-sm" (click)="rimuovi(product)">
+                            <span class="glyphicon glyphicon-trash"></span> 
+                          </button>
+                <input type="text" [(ngModel)]="product.quantita" (change)="calcoloTotale()" />
+            </div>
         </div>
     </div>
 </div>

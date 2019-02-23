@@ -26,6 +26,7 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { AcquistoComponentComponent } from './components/acquisto-component/acquisto-component.component';
+import { WishListComponentComponent } from './components/wish-list-component/wish-list-component.component';
 //import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AcquistoComponentComponent } from './components/acquisto-component/acqu
     AlertComponent,
     LoginComponent,
     RegisterComponent,
-    AcquistoComponentComponent
+    AcquistoComponentComponent,
+    WishListComponentComponent
   ],
   imports: [
     BrowserModule,

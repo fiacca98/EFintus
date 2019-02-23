@@ -43,6 +43,7 @@ export class SidebarComponentComponent implements OnInit {
   addToCart(): any {
     this.arrayProdottiComprati.push(this.prodotto);
     sessionStorage.setItem("arrayProdottiComprati", JSON.stringify(this.arrayProdottiComprati));
+    console.log(this.arrayProdottiComprati)
   }
   addToWishList(): any {
     "TODO";
