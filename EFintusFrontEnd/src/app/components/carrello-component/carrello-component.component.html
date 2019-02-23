@@ -1,3 +1,37 @@
-<p>
-  carrello-component works!
-</p>
+<div class="row" style="margin-bottom:-7%;">
+    <div class="littlebox col-2">
+        <h1>CARRELLO</h1>
+    </div>
+    <div class="col-2" style="margin-left: 5%">
+        <p><b>TITOLO E DESCRIZIONE DEL PRODOTTO</b></p>
+    </div>
+    <div class="col-2" style="margin-left: 5%">
+        <p><b>PREZZO</b></p>
+    </div>
+    <div class="col-2" style="margin-left: 5%">
+        <p>
+            <B>QUANTITA'</B>
+        </p>
+    </div>
+    <div class="col-2" style="background-color: lightgreen; text-align: center">
+        <br><br><button (click)="compra()">ACQUISTA ORA</button><br><br>
+        <p><b>TOTALE: {{prezzoTotale}}</b></p>
+    </div>
+</div>
+<div *ngFor="let product of arrayProdottiFiltrato">
+    <div class="row">
+        <div class="imgProdotto col-2">
+        </div>
+        <div class="col-2" style="margin-left: 5%">
+            <p>{{product.nome}}</p>
+            <br><br>
+            <p>{{product.descrizioneProdotto}}</p>
+        </div>
+        <div class="col-2" style="margin-left: 5%">
+            <p>{{product.prezzo}}€ x {{product.quantita}}</p>
+        </div>
+        <div class="col-2" style="margin-left: 5%">
+            <input type="text" [(ngModel)]="product.quantita" (change)="calcoloTotale()" />
+        </div>
+    </div>
+</div>

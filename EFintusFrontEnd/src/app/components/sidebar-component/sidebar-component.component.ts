@@ -10,6 +10,7 @@ import { CategorieServiceService } from "src/app/services/categorie-service/cate
   styleUrls: ["./sidebar-component.component.css"]
 })
 export class SidebarComponentComponent implements OnInit {
+  arrayProdottiComprati: Array<ProdottoBean> = sessionStorage.getItem("arrayProdottiComprati")? JSON.parse(sessionStorage.getItem("arrayProdottiComprati")) : [] ;
   prodotto: ProdottoBean;
   isCartAlertOpen: boolean = false;
   isWishlistAlertOpen: boolean = false;
@@ -32,14 +33,16 @@ export class SidebarComponentComponent implements OnInit {
     switch (oggetto) {
       case "wishlist":
         this.isWishlistAlertOpen = true;
-        this.addToCart();
+        this.addToWishList();
       case "carrello":
         this.isCartAlertOpen = true;
-        this.addToWishList();
+        this.addToCart();
+
     }
   }
   addToCart(): any {
-    "TODO";
+    this.arrayProdottiComprati.push(this.prodotto);
+    sessionStorage.setItem("arrayProdottiComprati", JSON.stringify(this.arrayProdottiComprati));
   }
   addToWishList(): any {
     "TODO";

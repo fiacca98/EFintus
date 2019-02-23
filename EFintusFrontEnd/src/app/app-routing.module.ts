@@ -10,6 +10,7 @@ import { SottoCategorieComponentComponent } from './components/sotto-categorie-c
 import { UtenteComponentComponent } from './components/utente-component/utente-component.component';
 import { AuthGuard } from './_guards';
 import { RegisterComponent } from './register';
+import { CarrelloComponentComponent } from './components/carrello-component/carrello-component.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponentComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'sottocategorie/:id', component: SottoCategorieComponentComponent },
   { path: 'listaProdotti/:id', component: ListaProdottiComponentComponent },
   { path: 'prodotto/:id', component: ProdottoComponentComponent },
+  { path: 'carrello', component: CarrelloComponentComponent },
   { path: 'utente/:id', component: UtenteComponentComponent}, //TEMP, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

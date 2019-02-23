@@ -11,4 +11,5 @@ export class ProdottoBean {
       pathImmagini: string;
       dataInizioValidita: string;
       dataFineValidita: string;
+      quantita?: any;
 }

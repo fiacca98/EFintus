@@ -25,6 +25,7 @@ import { AlertComponent } from './_directives';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AlertService, AuthenticationService, UserService } from './_services';
+import { AcquistoComponentComponent } from './components/acquisto-component/acquisto-component.component';
 //import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AlertService, AuthenticationService, UserService } from './_services';
     AppComponent,
     AlertComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AcquistoComponentComponent
   ],
   imports: [
     BrowserModule,

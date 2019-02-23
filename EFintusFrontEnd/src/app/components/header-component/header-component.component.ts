@@ -23,5 +23,10 @@ export class HeaderComponentComponent implements OnInit {
     } else  this.router.navigate(["login"]);
 
   }
+
+  
+  goToCarrello() {
+      this.router.navigate(["/carrello"]);
+  }
 }
 

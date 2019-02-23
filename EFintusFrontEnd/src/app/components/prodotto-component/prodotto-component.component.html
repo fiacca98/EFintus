@@ -10,13 +10,12 @@
                     <div class="col-md-12">
                         <h1>{{prodotto.nome}}</h1>
                         <p>Produttore: {{produttore.nome}}</p>
-                        <p>Voto:</p>
-                        <app-ngb-rating-config-component [inputReadonly]="recensioneMOdificabile" [inputRating]="mediaRecensione"></app-ngb-rating-config-component>
-
-
-                        <p>{{prodotto.prezzo}} €</p>
-                        <P>{{prodotto.colore}}</P>
-                        <P>{{prodotto.descrizioneProdotto}}</P>
+                        <p>Voto:
+                            <app-ngb-rating-config-component [inputReadonly]="recensioneMOdificabile" [inputRating]="mediaRecensione"></app-ngb-rating-config-component>
+                        </p>
+                        <p>Prezzo: {{prodotto.prezzo}} €</p>
+                        <P>Colore: {{prodotto.colore}}</P>
+                        <P>Descrizione: {{prodotto.descrizioneProdotto}}</P>
                     </div>
                 </div>
             </div>
