@@ -10,7 +10,8 @@ export class NavbarService {
     new Navbar(0,"Home","/home",[new Navbar(1,"HomeSub","/sub",[])]),
     new Navbar(1,"Ordini","/ordini",[]),
     new Navbar(2,"Magazzini","/magazzini",[]),
-    new Navbar(2,"Fornitori","/fornitori",[])
+    new Navbar(2,"Fornitori","/fornitori",[]),
+    new Navbar(2,"Produttore","/produttore",[])
   ]
 
   constructor() { }

@@ -1,5 +1,5 @@
 export class Produttore {
-  id_corriere: number;
+  id_produttore: number;
   nome: string;
   via: string;
   n_civico: number;

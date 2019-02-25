@@ -71,6 +71,16 @@
         "citta": "Milano",
         "cap": "20133"
       }
+      ],
+      "produttore":[
+      {
+        "id_produttore": 56565,
+        "nome": "VitellaPP",
+        "via": "Pratoni",
+        "n_civico": 33,
+        "citta": "Roma",
+        "cap": "27151"
+      }
       ]
 
   

@@ -17,6 +17,7 @@ import { MagazziniComponent } from './components/magazzini/magazzini.component';
 import { from } from 'rxjs';
 import { DettaglioComponent } from './components/dettaglio/dettaglio.component';
 import { FornitoriComponent } from './components/fornitori/fornitori.component';
+import { ProduttoreComponent } from './components/produttore/produttore.component';
 
 
 
@@ -30,6 +31,7 @@ import { FornitoriComponent } from './components/fornitori/fornitori.component';
     MagazziniComponent,
     DettaglioComponent,
     FornitoriComponent,
+    ProduttoreComponent,
     
   ],
   imports: [
