@@ -1,0 +1,12 @@
+<h1 class="display-4">Fornitore</h1>
+<div class="row">
+  <div *ngFor="let elemento of fornitore" class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      <p class="card-title">{{elemento.nome}}</p>
+      <p class="card-text">Via {{elemento.via}}</p>
+      <p class="card-text">numero Civico{{elemento.n_civico}}</p>
+      <p class="card-text">{{elemento.citta}}</p>
+    </div>
+  </div>
+</div>

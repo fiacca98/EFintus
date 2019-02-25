@@ -61,5 +61,17 @@
         "altezza": 5,
         "capacita": 600
       }
-    ]
+    ],
+    "fornitori":[
+      {
+        "id_fornitore": 23232,
+        "nome": "FornituraBellini",
+        "via": "Bellini",
+        "n_civico": 25,
+        "citta": "Milano",
+        "cap": "20133"
+      }
+      ]
+
+  
 }
