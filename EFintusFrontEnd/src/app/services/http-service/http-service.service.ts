@@ -16,6 +16,7 @@ import { first } from "rxjs/operators";
   providedIn: "root"
 })
 export class HttpServiceService {
+
   categoryObservable: Observable<CategoryBean[]>;
 
   constructor(
@@ -76,6 +77,12 @@ export class HttpServiceService {
       "http://localhost:3000/wishlist/" + idUtente
     );
   }
+
+  getMetodoPagamento(idUtente: number): any {
+    return this.httpClient.get<ProdottoBean[]>(
+      "http://localhost:3000/metodoPagamento/" + idUtente
+    );
+  }
   //HTTP POST
 
   register(user: UtenteBean) {
@@ -134,8 +141,8 @@ export class HttpServiceService {
       .pipe(first())
       .subscribe(
         data => {
-          this.alertService.success("Registration successful", true);
-          this.router.navigate(["/login"]);
+          this.alertService.success("Metodo di pagamento modificato con successo", true);
+
         },
         error => {
           this.alertService.error(error);
@@ -149,14 +156,29 @@ export class HttpServiceService {
       .pipe(first())
       .subscribe(
         data => {
-          this.alertService.success("Registration successful", true);
-          this.router.navigate(["/login"]);
+          this.alertService.success("Prodotto aggiunto alla wishlist con successo", true);
         },
         error => {
           this.alertService.error(error);
         }
       );
   }
+
+  acquistaProdotti(prodotti: ProdottoBean[], idUtente: string | number){
+    this.httpClient
+    .post("http://localhost:3000/acquista", {prodotti: prodotti, idUtente: idUtente})
+    .pipe(first())
+    .subscribe(
+      data => {
+        this.alertService.success("Registration successful", true);
+        this.router.navigate(["/login"]);
+      },
+      error => {
+        this.alertService.error(error);
+      }
+    );
+  }
+
 
   handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {

@@ -518,6 +518,36 @@
       "telefono": "3471784655",
       "partitaIva": "",
       "id": 22
+    },
+    {
+      "nome": "",
+      "cognome": "",
+      "email": "",
+      "password": "",
+      "indirizzo": "",
+      "citta": "",
+      "cap": "",
+      "stato": "",
+      "telefono": "",
+      "partitaIva": "",
+      "id": 23
+    },
+    {
+      "nome": "mq",
+      "cognome": "qwqewqewqewqeqwe",
+      "email": "mq@gmail.com",
+      "password": "1234",
+      "indirizzo": "via mq 1",
+      "citta": "MILANO",
+      "cap": "20341",
+      "stato": "ITALIA",
+      "telefono": "33241212",
+      "partitaIva": "1234561",
+      "id": 24
+    },
+    {
+      "tipologia": "qefqefqefq",
+      "id": 25
     }
   ],
   "prodotto": [

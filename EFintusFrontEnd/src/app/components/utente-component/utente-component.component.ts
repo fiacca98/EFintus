@@ -59,8 +59,7 @@ export class UtenteComponentComponent implements OnInit {
     });
 
     this.paymentMethodForm = this.formBuilder.group({
-      tipologia: ['', Validators.required],
-      numero: ['', Validators.required]
+      tipologia: ['', Validators.required]
     });
   }
 
@@ -70,11 +69,11 @@ export class UtenteComponentComponent implements OnInit {
   onSubmitMoficaPagamento() {
     this.submitted = true;
     // stop here if form is invalid
-    if (this.modifyForm.invalid) {
+    if (this.paymentMethodForm.invalid) {
       return;
     }
     this.loading = true;
-    this.httpService.modificaPagamento(this.modifyForm.value) //TODO CHIAMATA MODIFICA
+    this.httpService.modificaPagamento(this.paymentMethodForm.value) //TODO CHIAMATA MODIFICA
     this.loading = false;
   }
 

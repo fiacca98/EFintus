@@ -1,3 +1,54 @@
-<p>
-  acquisto-component works!
-</p>
+<h1>ACQUISTA I SEGUENTI PRODOTTI: </h1>
+<br>
+<div class="container-fluid">
+    <div class="row" style="margin: 3%">
+        <div class="col-lg-8">
+            <div class="container " style="background-color: lightgreen">
+                <h2>INDIRIZZO DI SPEDIZIONE</h2>
+                <br>
+                <h3 style="margin-left: 5%">{{currentUser.indirizzo}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 3%">
+        <div class="col-lg-8">
+            <div class="container " style="background-color: lightcyan">
+                <h2>METODO DI PAGAMENTO</h2>
+                <br>
+                <h3 style="margin-left: 5%">{{metodoPagamento}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 3%">
+        <div class="col-lg-8">
+            <div class="container " style="background-color: lightcoral">
+                <h2>ARTICOLI DA ACQUISIRE</h2>
+                <br>
+                <div *ngFor="let product of prodottiDaComprare">
+                    <div class="row" style="margin-bottom:2%">
+                        <div class="imgProdotto col-2">
+                        </div>
+                        <div class="col-2" style="margin-left: 5%">
+                            <p>{{product.nome}}</p>
+                            <br><br>
+                            <p>{{product.descrizioneProdotto}}</p>
+                        </div>
+                        <div class="col-2" style="margin-left: 5%">
+                            <p>{{product.prezzo}}€ x {{product.quantita}}</p>
+                        </div>
+                        <div class="col-2" style="margin-left: 5%">
+                            <div class="row">
+                                <input type="text" [(ngModel)]="product.quantita" (change)="calcoloTotale()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 ">
+            <button (click)="acquisto()">ACQUISTA</button><br>
+            <p>{{prezzoTotale}}€</p>
+        </div>
+    </div>
+    <!--     <button (click)="createUtente() ">CREA</button>
+ --></div>
