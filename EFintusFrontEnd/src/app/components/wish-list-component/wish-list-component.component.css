@@ -1,0 +1,25 @@
+.container {
+    background-color: lightgreen;
+}
+
+.tac {
+    text-align: center;
+}
+
+.littleBox {
+    width: 30%;
+}
+
+.imgProdotto {
+    width: 10%;
+    padding-top: 10%;
+    background: url(https://speckyboy.com/wp-content/uploads/2010/03/four-oh-four_08.jpg) center top;
+}
+
+.row {
+    margin: 2%
+}
+
+.glyphicon-trash:before {
+    content: "\e020"
+}

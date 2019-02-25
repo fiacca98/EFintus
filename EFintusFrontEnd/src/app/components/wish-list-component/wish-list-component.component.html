@@ -1,3 +1,25 @@
-<p>
-  wish-list-component works!
-</p>
+<div class="row">
+    <div class=" littlebox col-4 ">
+        <h1>WISHLIST</h1>
+    </div>
+    <div class="col-3 " style="margin-left: 5% ">
+        <p><b>TITOLO E DESCRIZIONE DEL PRODOTTO</b></p>
+    </div>
+    <div class="col-3 " style="margin-left: 5% ">
+        <p><b>PREZZO</b></p>
+    </div>
+</div>
+<div *ngFor="let product of wishlist ">
+    <div class="row" (click)="goToProduct(product.id)">
+        <div class="imgProdotto col-4 ">
+        </div>
+        <div class="col-3 " style="margin-left: 5% ">
+            <p>{{product.nome}}</p>
+            <br><br>
+            <p>{{product.descrizioneProdotto}}</p>
+        </div>
+        <div class="col-3 " style="margin-left: 5% ">
+            <p>{{product.prezzo}}€</p>
+        </div>
+    </div>
+</div>
