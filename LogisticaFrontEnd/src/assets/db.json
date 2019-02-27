@@ -60,6 +60,17 @@
         "metratura": 150,
         "altezza": 5,
         "capacita": 600
+      },
+      {
+        "id_magazzino":2524,
+        "nome": "Computer",
+        "via": "Prati chiari",
+        "n_civico": 18,
+        "citta": "Milano",
+        "cap": "20121",
+        "metratura": 150,
+        "altezza": 5,
+        "capacita": 600
       }
     ],
     "fornitori":[

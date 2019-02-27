@@ -1,31 +1,33 @@
-<h1 class="display-4">Magazzini</h1>
-<!--<div class="row">
-  <div *ngFor="let elemento of magazzini" class="card" style="width: 18rem;">
-    <img src="../../../assets/order.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-title">Magazzino: {{elemento.nome}}</p>
-      <p class="card-text">Via: {{elemento.via}} <br> Numero civico: {{elemento.n_civico}}</p>
-      <a href="#" class="btn btn-primary">Dettaglio</a>
-    </div>
-  </div>
-</div>-->
-<table class="table table-hover">
-  <thead class="thead-dark">
-    <tr >
-      <th scope="col">Magazzino</th>
-      <th scope="col">Via</th>
-      <th scope="col">Numero Civico</th>
-      <th scope="col">Dettaglio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let elemento of magazzini">
-      <td>{{elemento.nome}}</td>
-      <td>{{elemento.via}}</td>
-      <td>{{elemento.n_civico}}</td>
-      <td><a href="#" class="btn btn-primary">Dettaglio</a></td>
-    </tr>
-   
+<div class="row">
+      <div class="column"  *ngFor="let elemento of magazzini">
+          <div class="card-group">
+              <div class="card p-3" >
+                <div class="card-body">
+                  <h5 class="card-title">{{elemento.nome}}</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary btn-lg btn-block">Dettagli</button>
+                </div>
+              </div>
+              
+            </div>
+      </div>
 
-  </tbody>
-</table>
+    </div>
+
+
+
+    <!--<div class="card-group">
+    <div class="card p-3"  *ngFor="let elemento of magazzini">
+      <div class="card-body">
+        <h5 class="card-title">{{elemento.nome}}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Primary</button>
+      </div>
+    </div>
+    
+  </div>
+  -->
