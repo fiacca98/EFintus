@@ -81,6 +81,39 @@
         "citta": "Roma",
         "cap": "27151"
       }
+      ],
+      "prodotto":[
+      {
+        "id_prodotto":1111,
+        "nomeProdotto":"Stracciatella",
+        "descrizione":"Gelato"
+      }
+      ],
+      "lavoratore":[{
+       "codice_fiscale":12345433,
+       "nome":"Simone",
+       "cognome":"Bergomi",
+       "data_nascita":"07/05/1996",
+       "via":"via prati chiari",
+       "n_civico":"22",
+       "citta":"Roma",
+       "cap":15152,
+       "id_magazzino":2524
+      }
+      ],
+      "permessi":[{
+        "id_permesso":1112233,
+        "tipo":"bianco"
+      }
+      ],
+      "corriere":[{
+        "id_corriere":34322,
+        "nome":"Bartolini",
+        "via":"bartolini",
+        "n_civico":"25",
+        "citta":"Milano",
+        "cap":20121
+      }
       ]
 
   

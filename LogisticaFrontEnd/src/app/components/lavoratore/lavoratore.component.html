@@ -1,0 +1,14 @@
+<h1 class="display-4">Lavoratore</h1>
+<div class="row">
+  <div *ngFor="let elemento of lavoratore" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">{{elemento.nome}}</p>
+      <p class="card-text">{{elemento.cognome}}</p>
+      <p class="card-text">{{elemento.data_nascita}}</p>
+      <p class="card-text">{{elemento.via}}</p>
+      <p class="card-text">{{elemento.n_civico}}</p>
+      <p class="card-text">{{elemento.citta}}</p>
+    </div>
+  </div>
+</div>
+

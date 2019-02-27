@@ -1,0 +1,10 @@
+<h1 class="display-4">Prodotto</h1>
+<div class="row">
+  <div *ngFor="let elemento of prodotto" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">{{elemento.id_prodotto}}</p>
+      <p class="card-text">Nome Prodotto {{elemento.nomeProdotto}}</p>
+      <p class="card-text">Descrizione {{elemento.descrizione}}</p>
+    </div>
+  </div>
+</div>

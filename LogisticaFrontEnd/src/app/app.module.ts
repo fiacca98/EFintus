@@ -18,6 +18,10 @@ import { from } from 'rxjs';
 import { DettaglioComponent } from './components/dettaglio/dettaglio.component';
 import { FornitoriComponent } from './components/fornitori/fornitori.component';
 import { ProduttoreComponent } from './components/produttore/produttore.component';
+import { ProdottoComponent } from './components/prodotto/prodotto.component';
+import { LavoratoreComponent } from './components/lavoratore/lavoratore.component';
+import { PermessiComponent } from './components/permessi/permessi.component';
+import { CorriereComponent } from './components/corriere/corriere.component';
 
 
 
@@ -32,6 +36,10 @@ import { ProduttoreComponent } from './components/produttore/produttore.componen
     DettaglioComponent,
     FornitoriComponent,
     ProduttoreComponent,
+    ProdottoComponent,
+    LavoratoreComponent,
+    PermessiComponent,
+    CorriereComponent,
     
   ],
   imports: [
