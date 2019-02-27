@@ -1,4 +1,18 @@
-div {
-    margin: 20px;
-  }
+.column {
+  float: left;
+  width: 25%;
   
+}
+
+.row{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

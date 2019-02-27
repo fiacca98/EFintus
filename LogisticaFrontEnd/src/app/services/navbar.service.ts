@@ -12,9 +12,6 @@ export class NavbarService {
     new Navbar(2,"Magazzini","/magazzini",[]),
     new Navbar(2,"Fornitori","/fornitori",[]),
     new Navbar(2,"Produttore","/produttore",[]),
-    new Navbar(2,"Prodotto","/prodotto",[]),
-    new Navbar(2, "Lavoratore", "/lavoratore", []),
-    new Navbar(2,"Permessi","/permessi",[]),
     new Navbar(2,"Corriere","/corriere",[]),
   ]
 

@@ -81,6 +81,38 @@
         "n_civico": 25,
         "citta": "Milano",
         "cap": "20133"
+      },
+      {
+        "id_fornitore": 23232,
+        "nome": "FornituraBellini",
+        "via": "Bellini",
+        "n_civico": 25,
+        "citta": "Milano",
+        "cap": "20133"
+      },
+      {
+        "id_fornitore": 23232,
+        "nome": "FornituraBellini",
+        "via": "Bellini",
+        "n_civico": 25,
+        "citta": "Milano",
+        "cap": "20133"
+      },
+      {
+        "id_fornitore": 23232,
+        "nome": "FornituraBellini",
+        "via": "Bellini",
+        "n_civico": 25,
+        "citta": "Milano",
+        "cap": "20133"
+      },
+      {
+        "id_fornitore": 23232,
+        "nome": "FornituraBellini",
+        "via": "Bellini",
+        "n_civico": 25,
+        "citta": "Milano",
+        "cap": "20133"
       }
       ],
       "produttore":[
