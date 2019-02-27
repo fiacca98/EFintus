@@ -8,15 +8,29 @@ import { MagazzinoService } from 'src/app/services/magazzino.service';
   styleUrls: ['./magazzini.component.css']
 })
 export class MagazziniComponent implements OnInit {
-  private magazzini: Magazzino[]=[];
-  constructor(private magazzinoServices:MagazzinoService) {
+  private magazzini: Magazzino[] = [];
+  private magazzino: Magazzino = new Magazzino(2, "", "", 0, "", "", 0, 0, 0,[],[]);
+
+
+  constructor(private magazzinoServices: MagazzinoService) {
     this.getMagazzino();
-   }
+    this.getMagazzinoById(this.magazzino);
+  }
 
   ngOnInit() {
   }
   getMagazzino() {
     this.magazzinoServices.getMagazzino()
-      .subscribe(magazzini => this.magazzini = magazzini);
+      .subscribe(data => {
+        this.magazzini = data["magazzini"];
+        console.log(this.magazzini);
+      });
   }
+  getMagazzinoById(magazzino: Magazzino) {
+    this.magazzinoServices.getById(magazzino)
+      .subscribe(data => {
+        console.log(data["magazzini"]);
+      });
+  }
+
 }

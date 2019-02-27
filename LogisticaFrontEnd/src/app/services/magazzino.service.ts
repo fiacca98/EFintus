@@ -15,15 +15,22 @@ const httpOptions = {
 })
 export class MagazzinoService {
 
-  private url = "http://localhost:3000/warehouses"
+  private url = "http://10.9.129.13:8080/EFintus2/rest/magazzino/"
 
   constructor(private http: HttpClient) { }
 
   getMagazzino(): Observable<Magazzino[]> {
-    return this.http.get<Magazzino[]>(this.url)
+    return this.http.get<Magazzino[]>(this.url + "getAll", httpOptions)
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  getById(magazzino: Magazzino) : Observable<Magazzino> {
+    return this.http.post<Magazzino>(this.url + "getById",magazzino,httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: HttpErrorResponse) {
