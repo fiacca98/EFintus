@@ -1,0 +1,15 @@
+{
+    "evento": [{
+            "idEvento": 1,
+            "nome": "Natale",
+            "dataInizio": "2019-12-06",
+            "dataFine": "2019-12-26"
+        },
+        {
+            "idEvento": 2,
+            "nome": "Estate",
+            "dataInizio": "2019-06-01",
+            "dataFine": "2019-08-31"
+        }
+    ]
+}

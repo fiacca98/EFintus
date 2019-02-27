@@ -1,3 +1,4 @@
+import { Evento } from 'src/app/bean/marketingBean';
 import { AlertService } from "./../../_services/alert.service";
 import { ProdottoBean } from "src/app/bean/prodottoBean";
 import { CategoryBean } from "./../../bean/categoryBean";
@@ -83,6 +84,21 @@ export class HttpServiceService {
       "http://localhost:3000/metodoPagamento/" + idUtente
     );
   }
+
+
+searchByTags(tags: string){
+  return this.httpClient.get<ProdottoBean[]>(
+    "http://localhost:3000/wishlist/" + tags
+  );
+}
+
+getProdottiScontati(): Observable<ProdottoBean[]> {
+    return this.httpClient.get<ProdottoBean[]>("http://localhost:3000/prodotto"); //TEMP"http://localhost:3000/prodottiScontati
+}
+
+getEvento():Observable<Evento>{
+  return this.httpClient.get<Evento>("http://localhost:3000/evento/1" ); //TEMP
+}
   //HTTP POST
 
   register(user: UtenteBean) {
@@ -108,11 +124,12 @@ export class HttpServiceService {
       })
       .pipe(first())
       .subscribe(
-        data => {
+        (data: UtenteBean) => {
           this.router.navigate([
             this.route.snapshot.queryParams["returnUrl"] || "/"
           ]);
           this.alertService.success("Login successful", true);
+          return data;
         },
         error => {
           this.alertService.error(error);
@@ -178,7 +195,6 @@ export class HttpServiceService {
       }
     );
   }
-
 
   handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {

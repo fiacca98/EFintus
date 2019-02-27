@@ -1,68 +1,35 @@
-<!DOCTYPE html>
-<html>
-<title>Home Component</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<body>
-
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="container " style="text-align: center; padding: 50px; margin-top: 30px; ">
-                    <h1>EVENTO (MARKETING)</h1>
-                    <p>PRODOTTO RELATIVO ALL'EVENTO PRESENTE IN DATA ODIERNA</p>
-                    <p>/*RECUPERA GLI EVENTI ATTIVI IN BASE ALLA DATA ATTUALE */</p>
-                    <p>SELECT marketing_efintus.evento.nome, marketing_efintus.evento.dataInizio, marketing_efintus.evento.dataFine FROM marketing_efintus.evento WHERE DATE(CURDATE())> DATE(`dataInizio`) AND DATE(CURDATE())> DATE(`dataFine`)</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center " style=" margin-top: 30px;">
-            <div class="col-lg-12">
-                <div class="container " style="text-align: center; padding: 50px; ">
-                    <h1>CONSIGLIATI PER TE (MARKETING)</h1>
-                    <p>/*SUGGERISCI PRODOTTI DELLA STESSA CATEGORIA DI QUELLO VISITATO */ </p>
-                    <P>SELECT marketing_efintus.prodotto.Nome, marketing_efintus.prodotto.Prezzo FROM marketing_efintus.prodotto where marketing_efintus.prodotto.ID_Categoria = (SELECT marketing_efintus.prodotto.ID_Categoria FROM marketing_efintus.prodotto
-                        JOIN marketing_efintus.categoria ON marketing_efintus.prodotto.ID_Categoria = marketing_efintus.categoria.idCategoria JOIN marketing_efintus.prodotto_utente ON marketing_efintus.prodotto.idProdotto = marketing_efintus.prodotto_utente.idUtente
-                        WHERE marketing_efintus.prodotto_utente.idUtente = 4); /* ricavato teoricamente dal FE */ </P>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" style=" margin-top: 50px;">
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
-            </div>
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
-            </div>
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
-            </div>
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
-            </div>
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
-            </div>
-            <div class="col offset-xs-1">
-                <div class="container littleBox" style="text-align: center">OFFERTE PRODOTTI SINGOLI (MARKETING)
-                    <p></p>
-                </div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="container " style="text-align: center; padding: 50px; margin-top: 30px; " *ngIf="currentEvent != undefined">
+                <h1>EVENTO (MARKETING)</h1>
+                <h1>{{currentEvent.nome}}</h1>
+                <p>DAL</p>
+                <h2>{{currentEvent.dataInizio}}</h2>
+                <p>AL</p>
+                <h2>{{currentEvent.dataFine}}</h2>
             </div>
         </div>
     </div>
 
-</body>
-
-</html>
+    <div class="row justify-content-center " style=" margin-top: 30px;">
+        <div class="col-lg-12">
+            <div class="container " style="text-align: center; padding: 50px; ">
+                <h1>CONSIGLIATI PER TE (MARKETING)</h1>
+                <p>/*SUGGERISCI PRODOTTI DELLA STESSA CATEGORIA DI QUELLO VISITATO */ </p>
+                <P>SELECT marketing_efintus.prodotto.Nome, marketing_efintus.prodotto.Prezzo FROM marketing_efintus.prodotto where marketing_efintus.prodotto.ID_Categoria = (SELECT marketing_efintus.prodotto.ID_Categoria FROM marketing_efintus.prodotto JOIN
+                    marketing_efintus.categoria ON marketing_efintus.prodotto.ID_Categoria = marketing_efintus.categoria.idCategoria JOIN marketing_efintus.prodotto_utente ON marketing_efintus.prodotto.idProdotto = marketing_efintus.prodotto_utente.idUtente
+                    WHERE marketing_efintus.prodotto_utente.idUtente = 4); /* ricavato teoricamente dal FE */ </P>
+            </div>
+        </div>
+    </div>
+    <h2>PRODOTTI IN SCONTO</h2>
+    <div class="row" style=" margin-top: 50px;">
+        <div class="col offset-xs-1" *ngFor="let prodotto of prodottiScontati | slice:0:10;">
+            <div class="container littleBox" style="text-align: center">
+                <p>{{prodotto.nome}}</p>
+                <p>{{prodotto.prezzo}}</p>
+            </div>
+        </div>
+    </div>
+</div>

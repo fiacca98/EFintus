@@ -24,6 +24,10 @@ export class HeaderComponentComponent implements OnInit {
 
   }
 
+  searchTags(){
+
+  }
+
   
   goToCarrello() {
       this.router.navigate(["/carrello"]);

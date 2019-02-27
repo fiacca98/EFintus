@@ -548,6 +548,16 @@
     {
       "tipologia": "qefqefqefq",
       "id": 25
+    },
+    {
+      "email": "ponp",
+      "password": "onpo",
+      "id": 26
+    },
+    {
+      "email": "eaeagagd",
+      "password": "agadgad",
+      "id": 27
     }
   ],
   "prodotto": [
@@ -1380,6 +1390,14 @@
       "email": "k@gmail.com",
       "descrizione": "qualcosa",
       "partitaIVA": "7565755"
+    }
+  ],
+  "evento": [
+    {
+      "id": 1,
+      "nome": "Natale",
+      "dataInizio": "2019-12-06",
+      "dataFine": "2019-12-26"
     }
   ]
 }

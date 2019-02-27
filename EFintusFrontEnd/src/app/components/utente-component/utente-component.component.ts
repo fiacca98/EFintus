@@ -88,4 +88,8 @@ onSubmitMoficaUtente() {
   this.httpService.modificaUtente(this.modifyForm.value) //TODO CHIAMATA MODIFICA
   this.loading = false;
 }
+
+goToWishlist(){
+  this.router.navigate(["/wishlish"]);
+}
 }
