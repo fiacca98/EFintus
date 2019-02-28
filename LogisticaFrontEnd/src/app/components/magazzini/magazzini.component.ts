@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Magazzino } from 'src/app/beans/magazzino';
 import { MagazzinoService } from 'src/app/services/magazzino.service';
+import { Lavoratore } from 'src/app/beans/lavoratore';
 
 @Component({
   selector: 'app-magazzini',
@@ -10,27 +11,34 @@ import { MagazzinoService } from 'src/app/services/magazzino.service';
 export class MagazziniComponent implements OnInit {
   private magazzini: Magazzino[] = [];
   private magazzino: Magazzino = new Magazzino(2, "", "", 0, "", "", 0, 0, 0,[],[]);
+  private lavoratori: Lavoratore[] = [];
 
-
-  constructor(private magazzinoServices: MagazzinoService) {
+  constructor(private magazzinoService: MagazzinoService) {
     this.getMagazzino();
-    this.getMagazzinoById(this.magazzino);
   }
 
   ngOnInit() {
   }
+
   getMagazzino() {
-    this.magazzinoServices.getMagazzino()
+    this.magazzinoService.getMagazzini()
       .subscribe(data => {
-        this.magazzini = data["magazzini"];
+        this.magazzini = data["responseList"];
         console.log(this.magazzini);
       });
   }
-  getMagazzinoById(magazzino: Magazzino) {
+
+  getDetail(id: number): void {
+    this.magazzinoService.getById(this.magazzino).subscribe(data =>{
+      this.lavoratori = data["responseList"];
+    })
+  }
+
+  /*getMagazzinoById(magazzino: Magazzino) {
     this.magazzinoServices.getById(magazzino)
       .subscribe(data => {
         console.log(data["magazzini"]);
       });
-  }
+  }*/
 
 }

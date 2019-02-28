@@ -19,7 +19,7 @@ export class MagazzinoService {
 
   constructor(private http: HttpClient) { }
 
-  getMagazzino(): Observable<Magazzino[]> {
+  getMagazzini(): Observable<Magazzino[]> {
     return this.http.get<Magazzino[]>(this.url + "getAll", httpOptions)
       .pipe(
         catchError(this.handleError)
@@ -28,6 +28,13 @@ export class MagazzinoService {
 
   getById(magazzino: Magazzino) : Observable<Magazzino> {
     return this.http.post<Magazzino>(this.url + "getById",magazzino,httpOptions)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  getWorkers(magazzino: Magazzino) : Observable<Magazzino> {
+    return this.http.post<Magazzino>(this.url + "getWorkers",magazzino,httpOptions)
     .pipe(
       catchError(this.handleError)
     );
