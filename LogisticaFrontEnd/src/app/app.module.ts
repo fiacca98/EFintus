@@ -19,6 +19,7 @@ import { ProduttoreComponent } from './components/produttore/produttore.componen
 import { ProdottoComponent } from './components/prodotto/prodotto.component';
 import { LavoratoreComponent } from './components/lavoratore/lavoratore.component';
 import { CorriereComponent } from './components/corriere/corriere.component';
+import { DettaglioComponent } from './components/dettaglio/dettaglio.component';
 
 
 
@@ -35,6 +36,7 @@ import { CorriereComponent } from './components/corriere/corriere.component';
     ProdottoComponent,
     LavoratoreComponent,
     CorriereComponent,
+    DettaglioComponent,
     
   ],
   imports: [
