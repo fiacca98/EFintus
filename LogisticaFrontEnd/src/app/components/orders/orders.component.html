@@ -3,8 +3,8 @@
   <div *ngFor="let order of orders" class="card" style="width: 18rem;">
     <img src="../../../assets/order.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Ordine N° {{order.id_ordine}}</h5>
-      <p class="card-text">Stato: {{order.state}} <br> Quantità: {{order.quantity}}</p>
+      <h5 class="card-title">Ordine N° {{order.id}}</h5>
+      <p class="card-text">Stato: {{order.stato}}</p>
       <app-dettaglio></app-dettaglio>
     </div>
   </div>

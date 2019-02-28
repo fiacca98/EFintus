@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Lavoratore } from 'src/app/beans/lavoratore';
-import { LavoratoreService } from 'src/app/services/lavoratore.service';
 
 @Component({
   selector: 'app-lavoratore',
@@ -9,15 +8,10 @@ import { LavoratoreService } from 'src/app/services/lavoratore.service';
 })
 export class LavoratoreComponent implements OnInit {
   private lavoratore:Lavoratore[]=[];
-  constructor(private lavoratoreService: LavoratoreService) { 
-    this.getLavoratore();
+  constructor() { 
   }
 
   ngOnInit() {
   }
-  getLavoratore(){
-    this.lavoratoreService.getlavoratore()
-    .subscribe(lavoratore => this.lavoratore = lavoratore);
-  }
-  
+
 }

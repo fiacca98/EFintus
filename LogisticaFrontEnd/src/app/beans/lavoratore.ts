@@ -1,5 +1,5 @@
 export class Lavoratore{
-   codice_fiscale:number;
+   id:number;
    nome:string;
    cognome:string;
    data_nascita:string;
@@ -7,5 +7,4 @@ export class Lavoratore{
    n_civico:string;
    citta:string;
    cap:string;
-   id_magazzino:number;
 }

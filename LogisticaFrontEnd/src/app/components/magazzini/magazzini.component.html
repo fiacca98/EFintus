@@ -1,19 +1,27 @@
 <div class="row">
-      <div class="column"  *ngFor="let elemento of magazzini">
-          <div class="card-group">
-              <div class="card p-3" >
-                <div class="card-body">
-                  <h5 class="card-title">{{elemento.nome}}</h5>
-                  <p class="card-text"> Via {{elemento.via}} {{n_civico}} {{elemento.citta}} {{elemento.cap}}</p>
-                  <p class="card-text">Metratura: {{elemento.metratura}}</p>
-                  <p class="card-text">Altezza: {{elemento.altezza}}, Capacita: {{elemento.capacita}}</p>
-                </div> 
-                <div class="card-footer">
-                  <app-dettaglio></app-dettaglio>
-                </div>
-              </div>
-              
+  <div class="column" *ngFor="let elemento of magazzini">
+    <div class="card-group">
+      <div class="card p-3">
+        <div class="card-body">
+          <h5 class="card-title">{{elemento.nome}}</h5>
+          <p class="card-text"> {{elemento.via}} {{n_civico}} {{elemento.citta}} {{elemento.cap}}</p>
+          <p class="card-text">Metratura: {{elemento.metratura}}</p>
+          <p class="card-text">Altezza: {{elemento.altezza}}, Capacita: {{elemento.capacita}}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="getWorkers(elemento)" type="button" data-toggle="collapse"
+            attr.data-target="#{{elemento.nome}}" aria-expanded="false" aria-controls="collapseExample">
+            Lavoratori
+          </button>
+          <div class="collapse" id="{{elemento.nome}}">
+            <div class="card card-body">
+              <p *ngFor="let l of lavoratori">{{l.nome}}</p>
             </div>
+          </div>
+        </div>
       </div>
 
     </div>
+  </div>
+
+</div>

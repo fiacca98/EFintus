@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError} from 'rxjs/operators';
 import { Ordine } from '../beans/ordine';
 
 const httpOptions = {
@@ -15,12 +15,12 @@ const httpOptions = {
 })
 export class OrderService {
 
-  private url = "http://localhost:3000/orders"
+  private url = "http://10.9.129.13:8080/EFintus2/rest/ordine/"
 
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Ordine[]> {
-    return this.http.get<Ordine[]>(this.url)
+    return this.http.get<Ordine[]>(this.url + "getAll")
       .pipe(
         catchError(this.handleError)
       );

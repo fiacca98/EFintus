@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Lavoratore } from 'src/app/beans/lavoratore';
 
 @Component({
   selector: 'app-dettaglio',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DettaglioComponent implements OnInit {
 
-  constructor() { }
+  @Input() obj : object[];
+  private lavoratori : Lavoratore[];
+
+  constructor() {
+    console.log(this.obj);
+    //this.getObject();
+  }
 
   ngOnInit() {
+
+  }
+
+  getObject() {
+    if(this.obj instanceof Lavoratore){
+      this.lavoratori.push(this.obj);
+    }
   }
 
 }

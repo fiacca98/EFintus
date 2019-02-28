@@ -34,7 +34,7 @@ export class MagazzinoService {
   }
 
   getWorkers(magazzino: Magazzino) : Observable<Magazzino> {
-    return this.http.post<Magazzino>(this.url + "getWorkers",magazzino,httpOptions)
+    return this.http.post<Magazzino>(this.url + "getWorkers",magazzino)
     .pipe(
       catchError(this.handleError)
     );
