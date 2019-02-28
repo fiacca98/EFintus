@@ -1,3 +1,5 @@
+import { Lavoratore } from './lavoratore';
+
 export class Magazzino{
     id:number;
     nome: string;
@@ -9,9 +11,9 @@ export class Magazzino{
     altezza: number;
     capacita: number;
     disponibilita: [];
-    lavoratori: [];
+    lavoratori: Lavoratore[];
 
-    public constructor(id:number,nome: string,via: string,n_civico: number,citta: string,cap: string,metratura: number,altezza: number,capacita: number, disponibilita:[], lavoratori:[]){
+    public constructor(id:number,nome: string,via: string,n_civico: number,citta: string,cap: string,metratura: number,altezza: number,capacita: number, disponibilita:[], lavoratori: Lavoratore[]){
         this.id=id;
         this.nome=nome;
         this.via=via;

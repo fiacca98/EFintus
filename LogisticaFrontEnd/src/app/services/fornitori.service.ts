@@ -16,12 +16,12 @@ const httpOptions = {
 })
 export class FornitoriService {
 
-  private url = "http://localhost:3000/fornitori"
+  private url = "http://10.9.129.13:8080/EFintus2/rest/fornitore/"
 
   constructor(private http: HttpClient) { }
 
   getFornitore(): Observable<Fornitore[]> {
-    return this.http.get<Fornitore[]>(this.url)
+    return this.http.get<Fornitore[]>(this.url + "getAll")
       .pipe(
         catchError(this.handleError)
       );

@@ -1,5 +1,5 @@
 export class Corriere{
-    id_corriere: number;
+    id: number;
     nome: string;
     via: string;
     n_civico: number;

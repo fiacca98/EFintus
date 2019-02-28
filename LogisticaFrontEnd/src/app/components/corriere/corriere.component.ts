@@ -18,6 +18,6 @@ export class CorriereComponent implements OnInit {
   }
   getCorriere(){
     this.corriereService.getCorriere()
-    .subscribe(corriere => this.corriere = corriere);
+    .subscribe(corriere => this.corriere = corriere["responseList"]);
   }
 }

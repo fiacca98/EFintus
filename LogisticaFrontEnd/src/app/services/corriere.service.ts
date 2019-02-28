@@ -9,10 +9,12 @@ import { Corriere} from '../beans/corriere';
   providedIn: 'root'
 })
 export class CorriereService {
-  private url = "http://localhost:3000/corriere"
+  private url = "http://10.9.129.13:8080/EFintus2/rest/corriere/"
+  
   constructor(private http: HttpClient) { }
+
   getCorriere(): Observable<Corriere[]> {
-    return this.http.get<Corriere[]>(this.url)
+    return this.http.get<Corriere[]>(this.url + "getAll")
       .pipe(
         catchError(this.handleError)
       );

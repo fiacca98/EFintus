@@ -10,7 +10,7 @@ import { Lavoratore } from 'src/app/beans/lavoratore';
 })
 export class MagazziniComponent implements OnInit {
   private magazzini: Magazzino[] = [];
-  private magazzino: Magazzino = new Magazzino(1, "", "", 0, "", "", 0, 0, 0,[],[]);
+  private magazzino: Magazzino = new Magazzino(1, "", "", 0, "", "", 0, 0, 0, [], []);
   private lavoratori: Lavoratore[] = [];
 
   constructor(private magazzinoService: MagazzinoService) {
@@ -23,14 +23,19 @@ export class MagazziniComponent implements OnInit {
   getMagazzino() {
     this.magazzinoService.getMagazzini()
       .subscribe(data => {
-        this.magazzini = data["responseList"]
+        this.magazzini = data["responseList"];
+        for (let m of this.magazzini) {
+          this.magazzinoService.getWorkers(m)
+            .subscribe(data => {
+              m.lavoratori = data["responseList"];
+            });
+        }
       });
   }
 
-  getWorkers(magazzino: Magazzino): void {
-    this.magazzinoService.getWorkers(magazzino)
-      .subscribe(data =>{
-      this.lavoratori = data["responseList"];
-    })
+  getWorkers(magazzino: Magazzino) {
+
+
   }
+
 }

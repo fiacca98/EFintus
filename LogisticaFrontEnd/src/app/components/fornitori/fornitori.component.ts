@@ -18,6 +18,6 @@ export class FornitoriComponent implements OnInit {
   }
   getFornitore() {
     this.fornitoreServices.getFornitore()
-      .subscribe(fornitore => this.fornitore = fornitore);
+      .subscribe(fornitore => this.fornitore = fornitore["responseList"]);
   }
 }
