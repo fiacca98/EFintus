@@ -14,7 +14,40 @@
       <div class="modal-body">
         
         <p *ngFor = "let l of lavoratori">Nome: {{lavoratore.nome}} </p>
-        
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Via o Piazza</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Numero civico</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Citta'</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputPassword1">Cap'</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Metratura</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Altezza</label>
+                      <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Capacita'</label>
+                        <input type="text" class="form-control">
+                      </div>
+          </form>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-primary">Save changes</button>
