@@ -1,8 +1,18 @@
-h1 {
-    margin: 20px;
-  }
+.column {
+  float: left;
+  width: 25%;
   
-  div {
-    margin: 20px;
+}
+
+.row{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
-  
+}
